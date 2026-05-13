@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍷 斯洛文尼亞蜜月之旅</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Sans+HK:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf7f2;--warm:#fff9f0;--parchment:#f5efe4;
+  --gold:#b8893a;--gd:#8a6220;--gl:#d4a853;--gp:#f5e9d0;
+  --wine:#8b2635;--wl:#c4485a;--wp:#fdeaec;
+  --green:#2d6a4f;--gl2:#52b788;--gp2:#e8f5ee;
+  --blue:#2c6e9b;--bp:#e8f2fa;
+  --sand:#e8d5b0;--text:#1a1208;--t2:#4a3520;--t3:#7a6548;
+  --bdr:#e8dcc8;--sh:rgba(90,60,20,.09);--sh2:rgba(90,60,20,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--cream);color:var(--text);font-family:'Noto Sans HK',sans-serif;font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* ── HERO ── */
+.hero{position:relative;overflow:hidden;min-height:280px;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(150deg,#fff8ee 0%,#fdebd0 40%,#fce8e0 70%,#f5f0e8 100%);}
+.hero-img{position:absolute;inset:0;background:url(‘https://images.unsplash.com/photo-1555990793-da11153b4b97?w=900&q=80’) center 40%/cover;opacity:.18;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,240,220,.1),rgba(250,240,220,.4));}
+.hero-deco{position:absolute;top:-30px;right:-30px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(184,137,58,.12),transparent 70%);pointer-events:none;}
+.hero-deco2{position:absolute;bottom:-20px;left:-20px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(139,38,53,.08),transparent 70%);pointer-events:none;}
+.hero-c{position:relative;z-index:2;padding:38px 20px 28px;text-align:center;}
+.ew{display:inline-block;background:rgba(184,137,58,.12);border:1px solid rgba(184,137,58,.35);color:var(–gd);font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:12px;font-weight:600;}
+.ht{font-family:‘Cormorant Garamond’,serif;font-size:clamp(30px,8vw,48px);font-weight:700;color:var(–text);line-height:1.1;}
+.ht em{color:var(–wine);font-style:italic;}
+.hs{font-size:12px;color:var(–t3);margin-top:8px;}
+.hpills{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
+.hpill{background:rgba(255,255,255,.75);backdrop-filter:blur(6px);border:1px solid var(–bdr);color:var(–t2);font-size:11px;padding:4px 11px;border-radius:20px;font-weight:500;}
+
+/* ── TABS ── */
+.tw{background:#fff;border-bottom:2px solid var(–bdr);box-shadow:0 2px 14px var(–sh),0 -1px 0 var(–bdr);position:sticky;top:0;z-index:100;}
+.tabs{display:flex;overflow-x:auto;scrollbar-width:none;padding:0 4px;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{flex-shrink:0;padding:13px 14px 11px;font-size:12px;font-weight:500;color:var(–t3);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;font-family:‘Noto Sans HK’,sans-serif;}
+.tab.active{color:var(–wine);border-bottom-color:var(–wine);font-weight:700;}
+.tab:hover:not(.active){color:var(–text);}
+
+/* ── MAIN ── */
+.main{max-width:540px;margin:0 auto;padding:16px;}
+.sec{display:none;}.sec.active{display:block;}
+
+/* ── CARD ── */
+.card{background:#fff;border:1px solid var(–bdr);border-radius:16px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 12px var(–sh);}
+.chd{padding:14px 16px 12px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(–bdr);background:var(–warm);}
+.cic{font-size:20px;}
+.cti{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-weight:600;color:var(–text);}
+.csu{font-size:11px;color:var(–t3);margin-top:1px;}
+.cbd{padding:14px 16px;}
+.slbl{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;color:var(–gd);margin:16px 0 8px;}
+.slbl:first-child{margin-top:0;}
+.dvdr{height:1px;background:var(–bdr);margin:14px 0;}
+
+/* ── PLACE CHIPS ── */
+.chip{display:inline-flex;align-items:center;gap:4px;background:var(–wp);border:1px solid #f0c0c8;color:var(–wine);padding:2px 9px 2px 7px;border-radius:20px;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap;margin:1px 2px;}
+.chip:hover{background:var(–wine);color:#fff;border-color:var(–wine);transform:translateY(-1px);box-shadow:0 3px 8px rgba(139,38,53,.25);}
+.chip.g{background:var(–gp2);border-color:#b8e0ca;color:var(–green);}
+.chip.g:hover{background:var(–green);color:#fff;border-color:var(–green);}
+.chip.b{background:var(–bp);border-color:#b8d8f0;color:var(–blue);}
+.chip.b:hover{background:var(–blue);color:#fff;border-color:var(–blue);}
+.chip.gd{background:var(–gp);border-color:var(–sand);color:var(–gd);}
+.chip.gd:hover{background:var(–gold);color:#fff;border-color:var(–gold);}
+.chip-ico{font-size:12px;}
+
+/* ── MODAL ── */
+.modal-bg{position:fixed;inset:0;background:rgba(10,5,2,.55);backdrop-filter:blur(4px);z-index:1000;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
+.modal-bg.open{opacity:1;pointer-events:all;}
+.modal{background:#fff;border-radius:22px 22px 0 0;width:100%;max-width:540px;max-height:88vh;overflow-y:auto;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);padding-bottom:env(safe-area-inset-bottom,0);}
+.modal-bg.open .modal{transform:translateY(0);}
+.modal-img{height:180px;background:linear-gradient(135deg,var(–wine),var(–green));position:relative;overflow:hidden;flex-shrink:0;}
+.modal-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.modal-img-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,transparent 55%);}
+.modal-img-label{position:absolute;bottom:12px;left:16px;font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:700;color:#fff;line-height:1.15;}
+.modal-img-sub{position:absolute;bottom:13px;right:14px;font-size:10px;color:rgba(255,255,255,.75);}
+.modal-body{padding:18px 18px 24px;}
+.modal-close{position:absolute;top:14px;right:16px;width:30px;height:30px;background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:none;border-radius:50%;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;}
+.modal-type{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(–gd);margin-bottom:6px;}
+.modal-name{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:700;color:var(–text);line-height:1.2;margin-bottom:4px;}
+.modal-loc{font-size:12px;color:var(–t3);margin-bottom:12px;display:flex;align-items:center;gap:4px;}
+.modal-desc{font-size:13px;color:var(–t2);line-height:1.7;margin-bottom:14px;}
+.modal-details{background:var(–warm);border-radius:12px;padding:12px 14px;margin-bottom:14px;}
+.mdrow{display:flex;justify-content:space-between;align-items:flex-start;padding:5px 0;border-bottom:1px solid var(–bdr);}
+.mdrow:last-child{border-bottom:none;}
+.mdkey{font-size:11px;color:var(–t3);font-weight:500;flex-shrink:0;margin-right:10px;}
+.mdval{font-size:12px;color:var(–text);font-weight:500;text-align:right;}
+.modal-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px;}
+.mtag{font-size:11px;padding:3px 9px;border-radius:10px;font-weight:500;background:var(–gp2);color:var(–green);border:1px solid #b8e0ca;}
+.mtag.r{background:var(–wp);color:var(–wine);border-color:#f0b8c0;}
+.mtag.b{background:var(–bp);color:var(–blue);border-color:#b8d8f0;}
+.mtag.gd{background:var(–gp);color:var(–gd);border-color:var(–sand);}
+.modal-links{display:flex;flex-direction:column;gap:8px;}
+.mlink{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1.5px solid var(–bdr);border-radius:10px;padding:10px 13px;text-decoration:none;color:var(–text);font-size:13px;font-weight:500;transition:all .15s;}
+.mlink:hover{border-color:var(–wine);background:var(–wp);}
+.mlink-ico{font-size:16px;}
+.mlink-arr{font-size:14px;color:var(–t3);}
+.modal-stars{color:var(–gold);font-size:14px;margin-bottom:8px;}
+
+/* ── DAY STRIP ── */
+.ds{display:flex;gap:7px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;scrollbar-width:none;}
+.ds::-webkit-scrollbar{display:none;}
+.dbt{flex-shrink:0;width:52px;height:58px;border-radius:12px;border:1.5px solid var(–bdr);background:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;transition:all .18s;box-shadow:0 1px 6px var(–sh);}
+.dbt.active{background:var(–wine);border-color:var(–wine);box-shadow:0 4px 14px rgba(139,38,53,.3);transform:translateY(-1px);}
+.dbt .dn{font-size:9px;color:var(–t3);font-weight:500;letter-spacing:.5px;}
+.dbt .dd{font-size:14px;font-weight:700;color:var(–text);}
+.dbt .dm{font-size:9px;color:var(–t3);}
+.dbt.active .dn,.dbt.active .dd,.dbt.active .dm{color:rgba(255,255,255,.85);}
+.dbt.active .dd{color:#fff;}
+.dc{display:none;animation:fds .22s ease;}.dc.active{display:block;}
+@keyframes fds{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+/* ── DAY HERO ── */
+.dhero{border-radius:14px;overflow:hidden;margin-bottom:0;position:relative;height:120px;box-shadow:0 2px 12px var(–sh2);}
+.dhov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.35) 0%,rgba(0,0,0,.05) 100%);}
+.dhc{position:relative;z-index:1;padding:14px 16px;height:100%;display:flex;flex-direction:column;justify-content:center;}
+.dhc h3{font-family:‘Cormorant Garamond’,serif;font-size:19px;font-weight:700;color:#fff;line-height:1.2;text-shadow:0 1px 4px rgba(0,0,0,.3);}
+.dhc p{font-size:11px;color:rgba(255,255,255,.85);margin-top:3px;text-shadow:0 1px 3px rgba(0,0,0,.25);}
+.dbdg{position:absolute;top:10px;right:11px;background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:10px;font-weight:600;padding:3px 9px;border-radius:10px;}
+
+/* ── TIMELINE CARD ── */
+.tlcard{background:#fff;border:1px solid var(–bdr);border-radius:0 0 14px 14px;padding:16px 16px 6px;margin-bottom:14px;box-shadow:0 3px 12px var(–sh);}
+
+/* ── TIMELINE ── */
+.tl{padding-left:22px;position:relative;}
+.tl::before{content:’’;position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(–wl),var(–gl2));border-radius:2px;opacity:.25;}
+.tli{position:relative;margin-bottom:16px;}
+.tld{position:absolute;left:-22px;top:4px;width:12px;height:12px;border-radius:50%;background:var(–gold);border:2px solid #fff;box-shadow:0 0 0 2px var(–gp);}
+.tlt{font-size:10px;color:var(–wine);font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+.tlti{font-size:13px;font-weight:600;color:var(–text);margin-top:1px;}
+.tlde{font-size:11.5px;color:var(–t3);margin-top:3px;line-height:1.55;}
+.bdrive{display:inline-flex;align-items:center;gap:5px;background:var(–gp2);border:1px solid #b8e0ca;color:var(–green);padding:5px 11px;border-radius:20px;font-size:11px;font-weight:500;margin:2px 0;}
+.brest{display:inline-flex;align-items:center;gap:5px;background:var(–gp);border:1px solid var(–sand);color:var(–gd);padding:5px 11px;border-radius:20px;font-size:11px;font-weight:500;margin:2px 0;}
+.bgolf{display:inline-flex;align-items:center;gap:5px;background:var(–bp);border:1px solid #b8d8f0;color:var(–blue);padding:5px 11px;border-radius:20px;font-size:11px;font-weight:500;margin:2px 0;}
+
+/* ── BUDGET ── */
+.bhero{background:linear-gradient(135deg,#8b2635 0%,#6a1a25 60%,#4a1015 100%);border-radius:16px;padding:22px;text-align:center;margin-bottom:14px;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(139,38,53,.25);}
+.bhero::after{content:‘🍷’;position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:52px;opacity:.12;}
+.btot{font-family:‘Cormorant Garamond’,serif;font-size:44px;font-weight:700;color:#fff;line-height:1;}
+.blbl{font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1px;margin-bottom:6px;}
+.bpp{font-size:13px;color:rgba(255,255,255,.8);margin-top:8px;}
+.bpp strong{color:#f0d080;}
+.bi{display:flex;justify-content:space-between;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(–bdr);}
+.bi:last-child{border-bottom:none;padding-bottom:0;}
+.bil{font-size:13px;font-weight:500;color:var(–text);}
+.bin{font-size:11px;color:var(–t3);margin-top:2px;}
+.bia{font-size:14px;font-weight:700;color:var(–gd);flex-shrink:0;margin-left:12px;}
+.bibar{height:3px;border-radius:2px;background:var(–bdr);margin-top:5px;}
+.bifill{height:100%;border-radius:2px;background:linear-gradient(to right,var(–gl),var(–wl));}
+
+/* ── CHECKLIST ── */
+.css2{margin-bottom:20px;}
+.cst{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(–gd);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(–bdr);}
+.ci{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:10px;background:var(–warm);margin-bottom:6px;cursor:pointer;transition:all .15s;border:1px solid var(–bdr);}
+.ci:hover{border-color:var(–gl);background:var(–gp);}
+.ci.done{opacity:.5;background:var(–gp2);border-color:#b8e0ca;}
+.cbox{width:20px;height:20px;flex-shrink:0;border-radius:5px;border:2px solid var(–bdr);display:flex;align-items:center;justify-content:center;font-size:11px;background:#fff;transition:all .15s;}
+.ci.done .cbox{background:var(–green);border-color:var(–green);color:#fff;}
+.cilbl{font-size:13px;color:var(–text);line-height:1.35;font-weight:500;}
+.cinote{font-size:11px;color:var(–t3);margin-top:2px;}
+.udot{width:7px;height:7px;border-radius:50%;background:#e74c3c;flex-shrink:0;margin-top:5px;}
+
+/* ── PACKING ── */
+.ppbar{background:#fff;border:1px solid var(–bdr);border-radius:12px;padding:14px 16px;margin-bottom:12px;display:flex;align-items:center;gap:14px;box-shadow:0 2px 8px var(–sh);}
+.pring{position:relative;width:50px;height:50px;flex-shrink:0;}
+.pring svg{transform:rotate(-90deg);}
+.ptxt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(–wine);}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.pitem{background:#fff;border:1.5px solid var(–bdr);border-radius:10px;padding:10px 11px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:8px;box-shadow:0 1px 4px var(–sh);}
+.pitem:hover{border-color:var(–gl);box-shadow:0 3px 10px var(–sh2);}
+.pitem.packed{background:var(–gp2);border-color:var(–gl2);}
+.pe{font-size:17px;}.pilbl{font-size:12px;color:var(–text);}
+.pitem.packed .pilbl{color:var(–green);font-weight:500;}
+
+/* ── FLIGHTS ── */
+.flight-panel{background:#fff;border:1.5px solid var(–bdr);border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:0 2px 12px var(–sh);}
+.fptitle{font-family:‘Cormorant Garamond’,serif;font-size:17px;font-weight:600;color:var(–text);margin-bottom:14px;}
+.frow{display:flex;gap:8px;margin-bottom:10px;align-items:center;}
+.flabel{font-size:11px;font-weight:700;color:var(–gd);width:60px;flex-shrink:0;}
+.finp{flex:1;background:#fff;border:1.5px solid var(–bdr);border-radius:9px;padding:9px 12px;color:var(–text);font-size:13px;font-family:‘Noto Sans HK’,sans-serif;outline:none;transition:border-color .15s;}
+.finp:focus{border-color:var(–gold);}
+.fselect{flex:1;background:#fff;border:1.5px solid var(–bdr);border-radius:9px;padding:9px 12px;color:var(–text);font-size:13px;font-family:‘Noto Sans HK’,sans-serif;outline:none;appearance:none;cursor:pointer;transition:border-color .15s;}
+.fselect:focus{border-color:var(–gold);}
+.search-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;}
+.sbtn{background:var(–wine);color:#fff;border:none;border-radius:10px;padding:11px;font-size:12px;font-weight:700;cursor:pointer;font-family:‘Noto Sans HK’,sans-serif;transition:all .15s;box-shadow:0 3px 10px rgba(139,38,53,.25);display:flex;align-items:center;justify-content:center;gap:6px;}
+.sbtn:hover{background:var(–wl);}
+.sbtn.alt{background:#fff;color:var(–text);border:1.5px solid var(–bdr);}
+.sbtn.alt:hover{border-color:var(–gold);background:var(–gp);}
+.airline-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px;}
+.airline-card{background:#fff;border:1px solid var(–bdr);border-radius:10px;padding:10px 11px;display:flex;align-items:center;gap:8px;cursor:pointer;transition:all .15s;text-decoration:none;}
+.airline-card:hover{border-color:var(–wine);box-shadow:0 3px 10px var(–sh2);}
+.acico{font-size:20px;flex-shrink:0;}
+.acname{font-size:12px;font-weight:700;color:var(–text);}
+.actype{font-size:10px;color:var(–t3);margin-top:1px;}
+.acprice{font-size:11px;color:var(–wine);font-weight:700;margin-top:2px;}
+.tip-box{background:var(–gp);border:1px solid var(–sand);border-radius:10px;padding:11px 13px;margin-bottom:12px;font-size:12px;color:var(–t2);line-height:1.6;}
+.tip-box strong{color:var(–gd);}
+
+/* ── HOTEL CARD ── */
+.hcard{background:#fff;border:1px solid var(–bdr);border-radius:14px;overflow:hidden;margin-bottom:10px;box-shadow:0 2px 10px var(–sh);}
+.himg{height:100px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:40px;}
+.hbody{padding:12px 14px;}
+.hname{font-family:‘Cormorant Garamond’,serif;font-size:15px;font-weight:700;color:var(–text);}
+.hloc{font-size:11px;color:var(–t3);margin-top:1px;}
+.hprice{font-size:12px;font-weight:700;color:var(–wine);margin-top:5px;}
+.htags{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px;}
+.htag{font-size:10px;padding:2px 8px;border-radius:8px;font-weight:500;background:var(–gp2);color:var(–green);border:1px solid #b8e0ca;}
+.stars{color:var(–gold);font-size:12px;margin-top:2px;}
+
+/* ── WINERY ── */
+.wcard{background:#fff;border:1px solid var(–bdr);border-radius:14px;padding:14px;margin-bottom:10px;border-left:4px solid var(–wine);box-shadow:0 2px 10px var(–sh);}
+.wname{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-weight:700;color:var(–text);}
+.wreg{font-size:11px;color:var(–gd);font-weight:600;margin-top:2px;}
+.wwine{font-size:12px;color:var(–t2);margin-top:6px;line-height:1.5;}
+.wbar{font-size:11px;color:var(–t3);margin-top:3px;line-height:1.5;}
+.wstars{color:var(–gold);font-size:13px;margin-top:2px;}
+
+/* ── SCENIC ── */
+.scard{background:#fff;border:1px solid var(–bdr);border-radius:14px;overflow:hidden;margin-bottom:12px;box-shadow:0 3px 14px var(–sh2);}
+.simgw{position:relative;height:175px;overflow:hidden;}
+.simgw img{width:100%;height:100%;object-fit:cover;display:block;}
+.simgov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.62),transparent 55%);}
+.siml{position:absolute;bottom:10px;left:14px;font-family:‘Cormorant Garamond’,serif;font-size:19px;font-weight:700;color:#fff;}
+.sims{position:absolute;bottom:11px;right:13px;font-size:10px;color:rgba(255,255,255,.7);}
+.sbody{padding:12px 14px;}
+.sdesc{font-size:12px;color:var(–t2);line-height:1.6;}
+.stags2{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
+.stag2{font-size:10px;padding:3px 9px;border-radius:10px;font-weight:500;background:var(–wp);color:var(–wine);border:1px solid #f0b8c0;}
+.stag2.g{background:var(–gp2);color:var(–green);border-color:#b8e0ca;}
+.stag2.b{background:var(–bp);color:var(–blue);border-color:#b8d8f0;}
+.stag2.gd{background:var(–gp);color:var(–gd);border-color:var(–sand);}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-bg"></div><div class="hero-img"></div><div class="hero-ov"></div>
+  <div class="hero-deco"></div><div class="hero-deco2"></div>
+  <div class="hero-c">
+    <div class="ew">🍷 蜜月葡萄酒之旅</div>
+    <h1 class="ht">斯洛文尼亞<br><em>Wine &amp; Wander</em></h1>
+    <p class="hs">23 – 29 July 2026 &nbsp;·&nbsp; 四人同行 &nbsp;·&nbsp; 七天</p>
+    <div class="hpills">
+      <span class="hpill">🏔 Lake Bled</span>
+      <span class="hpill">🍷 Goriška Brda</span>
+      <span class="hpill">⛳ Golf</span>
+      <span class="hpill">🌊 Piran</span>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+
+<div class="tw">
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('itinerary',this)">📅 行程</button>
+    <button class="tab" onclick="showTab('scenic',this)">🏔 景點</button>
+    <button class="tab" onclick="showTab('budget',this)">💷 預算</button>
+    <button class="tab" onclick="showTab('todo',this)">✅ 待辦</button>
+    <button class="tab" onclick="showTab('packing',this)">🎒 行李</button>
+    <button class="tab" onclick="showTab('flights',this)">✈️ 機票</button>
+    <button class="tab" onclick="showTab('hotels',this)">🏨 住宿</button>
+    <button class="tab" onclick="showTab('wineries',this)">🍷 酒莊</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ══════ ITINERARY ══════ -->
+
+<div id="itinerary" class="sec active">
+  <div class="ds" id="dayStrip"></div>
+  <div id="daycards"></div>
+</div>
+
+<!-- ══════ SCENIC ══════ -->
+
+<div id="scenic" class="sec">
+  <div class="scard">
+    <div class="simgw">
+      <img src="https://images.unsplash.com/photo-1555990793-da11153b4b97?w=800&q=80" alt="Lake Bled">
+      <div class="simgov"></div>
+      <div class="siml">Lake Bled 布萊德湖</div><div class="sims">📍 朱利安阿爾卑斯山</div>
+    </div>
+    <div class="sbody">
+      <div class="sdesc">斯洛文尼亞最標誌性景色。翡翠綠湖中央有座小島，島上白色教堂配後方古堡。必到！</div>
+      <div class="stags2">
+        <span class="stag2 b" onclick="openPlace('bled-boat')">⛵ 划艇去小島</span>
+        <span class="stag2 gd" onclick="openPlace('kremsni')">🥐 Kremšnita 千層</span>
+        <span class="stag2" onclick="openPlace('bled-castle')">🏰 Bled 古堡</span>
+        <span class="stag2 g" onclick="openPlace('vintgar')">🥾 Vintgar 峽谷</span>
+      </div>
+    </div>
+  </div>
+  <div class="scard">
+    <div class="simgw" style="background:linear-gradient(135deg,#2a5a14,#1a3a0e);display:flex;align-items:center;justify-content:center;font-size:72px;height:175px;">⛳</div>
+    <div class="sbody">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px;">Golf Club Bled</div>
+      <div class="sdesc">歐洲最靚球場之一，阿爾卑斯山 + 布萊德湖背景，分 King's Course 18洞 + Lake's Course 9洞。</div>
+      <div class="stags2">
+        <span class="stag2 b" onclick="openPlace('golf-bled')">⛳ 立即查看詳情</span>
+      </div>
+    </div>
+  </div>
+  <div class="scard">
+    <div class="simgw" style="background:linear-gradient(135deg,#52b788,#2d6a4f);display:flex;align-items:center;justify-content:center;font-size:72px;height:175px;">🍇</div>
+    <div class="sbody">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px;">Goriška Brda 葡萄酒山丘</div>
+      <div class="sdesc">「斯洛文尼亞的托斯卡納」。連綿山丘葡萄園，無數家族酒莊，Rebula 橙酒發源地。</div>
+      <div class="stags2">
+        <span class="stag2" onclick="openPlace('scurek')">🍷 Ščurek 酒莊</span>
+        <span class="stag2 gd" onclick="openPlace('kabaj')">🍷 Kabaj 橙酒</span>
+        <span class="stag2 g" onclick="openPlace('klet-brda')">🍷 Klet Brda</span>
+      </div>
+    </div>
+  </div>
+  <div class="scard">
+    <div class="simgw" style="background:linear-gradient(135deg,#2c6e9b,#1a405a);display:flex;align-items:center;justify-content:center;font-size:72px;height:175px;">🌊</div>
+    <div class="sbody">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--text);margin-bottom:6px;">Piran 海岸古城</div>
+      <div class="sdesc">威尼斯風格海岸古城，海鮮 + Malvasia 白酒，旅程最浪漫一夜。</div>
+      <div class="stags2">
+        <span class="stag2 b" onclick="openPlace('piran')">🌊 查看 Piran 詳情</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ BUDGET ══════ -->
+
+<div id="budget" class="sec">
+  <div class="bhero">
+    <div class="blbl">預計總費用（4人）</div>
+    <div class="btot">£2,900</div>
+    <div class="bpp">每人約 <strong>£725</strong> &nbsp;·&nbsp; 非常抵玩 🎉</div>
+  </div>
+  <div class="card"><div class="chd"><span class="cic">✈️</span><div><div class="cti">機票</div><div class="csu">倫敦 ↔ 盧布爾雅那，4人</div></div></div>
+    <div class="cbd">
+      <div class="bi"><div><div class="bil">來回機票 × 4</div><div class="bin">easyJet / Wizz Air / Ryanair</div></div><div class="bia">~£480</div></div>
+      <div class="bibar"><div class="bifill" style="width:22%"></div></div>
+      <div class="bi"><div><div class="bil">機場交通（兩端）</div><div class="bin">火車或共乘的士</div></div><div class="bia">~£80</div></div>
+    </div>
+  </div>
+  <div class="card"><div class="chd"><span class="cic">🚗</span><div><div class="cti">租車</div><div class="csu">7天自動波</div></div></div>
+    <div class="cbd">
+      <div class="bi"><div><div class="bil">自動波 Compact（7天）</div><div class="bin">Sixt / Europcar — 要快 book！</div></div><div class="bia">~£245</div></div>
+      <div class="bi"><div><div class="bil">油費（~700km）</div><div class="bin">€1.60/L 柴油</div></div><div class="bia">~£85</div></div>
+      <div class="bi"><div><div class="bil">泊車 / Vignette</div><div class="bin">過路貼通常已包租車內</div></div><div class="bia">~£15</div></div>
+    </div>
+  </div>
+  <div class="card"><div class="chd"><span class="cic">🏨</span><div><div class="cti">住宿</div><div class="csu">7晚，2間房</div></div></div>
+    <div class="cbd">
+      <div class="bi"><div><div class="bil">盧布爾雅那 — 1晚</div><div class="bin">Airbnb / 精品青旅</div></div><div class="bia">~£60</div></div>
+      <div class="bi"><div><div class="bil">Lake Bled — 2晚</div><div class="bin">湖畔 B&B / Golf Hotel</div></div><div class="bia">~£180</div></div>
+      <div class="bi"><div><div class="bil">Goriška Brda — 2晚</div><div class="bin">Valentina / Dvor 酒莊民宿</div></div><div class="bia">~£150</div></div>
+      <div class="bi"><div><div class="bil">Piran — 2晚</div><div class="bin">海景民宿，2間房</div></div><div class="bia">~£160</div></div>
+    </div>
+  </div>
+  <div class="card"><div class="chd"><span class="cic">🍷</span><div><div class="cti">美酒美食</div></div></div>
+    <div class="cbd">
+      <div class="bi"><div><div class="bil">酒莊試酒（4場）</div><div class="bin">~€12-15/人/場</div></div><div class="bia">~£150</div></div>
+      <div class="bi"><div><div class="bil">買酒帶回家</div><div class="bin">~4支/人，平均£10/支</div></div><div class="bia">~£160</div></div>
+      <div class="bi"><div><div class="bil">午餐 × 6日</div><div class="bin">本地麵包店、輕食</div></div><div class="bia">~£290</div></div>
+      <div class="bi"><div><div class="bil">晚餐 × 6晚</div><div class="bin">農莊晚餐 + Piran 海鮮</div></div><div class="bia">~£480</div></div>
+    </div>
+  </div>
+  <div class="card"><div class="chd"><span class="cic">⛳</span><div><div class="cti">活動</div></div></div>
+    <div class="cbd">
+      <div class="bi"><div><div class="bil">Golf Club Bled（4人）</div><div class="bin">€80-120/人</div></div><div class="bia">~£350</div></div>
+      <div class="bi"><div><div class="bil">Bled 划艇 + 古堡 + Vintgar</div><div class="bin">€15 + €15 + €6/人</div></div><div class="bia">~£125</div></div>
+      <div class="bi"><div><div class="bil">Lipica 白馬場</div><div class="bin">€13/人</div></div><div class="bia">~£44</div></div>
+      <div class="bi"><div><div class="bil">電動單車 Brda（1日）</div><div class="bin">€25/輛 × 4</div></div><div class="bia">~£85</div></div>
+    </div>
+  </div>
+  <div class="card"><div class="chd"><span class="cic">🆘</span><div><div class="cti">緊急備用（10%）</div></div></div>
+    <div class="cbd"><div class="bi"><div><div class="bil">意外開支緩衝</div></div><div class="bia">~£290</div></div></div>
+  </div>
+</div>
+
+<!-- ══════ TODO ══════ -->
+
+<div id="todo" class="sec"><div id="clistc"></div></div>
+
+<!-- ══════ PACKING ══════ -->
+
+<div id="packing" class="sec">
+  <div class="ppbar">
+    <div class="pring">
+      <svg width="50" height="50" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="#e8dcc8" stroke-width="4"/><circle id="parc" cx="25" cy="25" r="20" fill="none" stroke="#8b2635" stroke-width="4" stroke-dasharray="125.6" stroke-dashoffset="125.6" stroke-linecap="round"/></svg>
+      <div class="ptxt" id="ppct">0%</div>
+    </div>
+    <div><div style="font-size:13px;font-weight:600;color:var(--text)">行李進度</div><div style="font-size:11px;color:var(--t3)" id="psub">點選項目標記已收拾</div></div>
+  </div>
+  <div id="pgrid"></div>
+</div>
+
+<!-- ══════ FLIGHTS ══════ -->
+
+<div id="flights" class="sec">
+  <div class="flight-panel">
+    <div class="fptitle">✈️ 搜尋真實航班</div>
+    <div style="background:#fff3cd;border:1px solid #f0d080;border-radius:10px;padding:10px 12px;margin-bottom:14px;font-size:12px;color:#7a5a00;line-height:1.6;">
+      💡 <strong>關於 AI 搜尋機票：</strong>Claude 無法提供實時機票價格，因為冇接入航班數據庫。以下係真實搜尋引擎，揀好出發地同目的地後一鍵跳去搜尋真實結果！
+    </div>
+    <div class="frow"><span class="flabel">出發地</span>
+      <select class="fselect" id="fdep">
+        <option value="London">🇬🇧 London（全部機場）</option>
+        <option value="London Gatwick">🇬🇧 London Gatwick (LGW)</option>
+        <option value="London Stansted">🇬🇧 London Stansted (STN)</option>
+        <option value="London Heathrow">🇬🇧 London Heathrow (LHR)</option>
+        <option value="London Luton">🇬🇧 London Luton (LTN)</option>
+        <option value="Manchester">🇬🇧 Manchester (MAN)</option>
+        <option value="Birmingham">🇬🇧 Birmingham (BHX)</option>
+      </select>
+    </div>
+    <div class="frow"><span class="flabel">目的地</span>
+      <select class="fselect" id="farr">
+        <option value="Ljubljana">🇸🇮 Ljubljana (LJU) — 直飛</option>
+        <option value="Venice">🇮🇹 Venice Marco Polo — 隱藏平價</option>
+        <option value="Trieste">🇮🇹 Trieste — 超近斯洛文尼亞</option>
+        <option value="Vienna">🇦🇹 Vienna — 轉機選擇</option>
+        <option value="Zagreb">🇭🇷 Zagreb — 再租車入境</option>
+      </select>
+    </div>
+    <div class="frow"><span class="flabel">出發日</span><input class="finp" id="fdate" value="23 Jul 2026" placeholder="23 Jul 2026"></div>
+    <div class="frow"><span class="flabel">回程日</span><input class="finp" id="fret" value="29 Jul 2026" placeholder="29 Jul 2026"></div>
+    <div class="frow"><span class="flabel">乘客</span>
+      <select class="fselect" id="fpax">
+        <option value="4">4 人</option>
+        <option value="1">1 人</option>
+        <option value="2">2 人</option>
+        <option value="3">3 人</option>
+      </select>
+    </div>
+    <div class="search-grid">
+      <button class="sbtn" onclick="openSearch('skyscanner')">🔍 Skyscanner</button>
+      <button class="sbtn" onclick="openSearch('google')">✈️ Google Flights</button>
+      <button class="sbtn alt" onclick="openSearch('kayak')">🛫 Kayak</button>
+      <button class="sbtn alt" onclick="openSearch('momondo')">💰 Momondo</button>
+    </div>
+  </div>
+
+  <div class="card"><div class="chd"><span class="cic">✈️</span><div><div class="cti">推薦航空公司</div><div class="csu">點擊直接去官網</div></div></div>
+    <div class="cbd" style="padding-top:8px">
+      <div class="tip-box" style="margin-bottom:12px">💡 <strong>倫敦 → Ljubljana 最平選擇：</strong>Wizz Air (STN) 或 easyJet (LGW) 直飛，通常 £55-90 單程。早 book 有驚喜！</div>
+      <div class="airline-grid">
+        <a href="https://wizzair.com" target="_blank" class="airline-card"><span class="acico">🟣</span><div><div class="acname">Wizz Air</div><div class="actype">廉航直飛</div><div class="acprice">~£55-80單程</div></div></a>
+        <a href="https://easyjet.com" target="_blank" class="airline-card"><span class="acico">🟠</span><div><div class="acname">easyJet</div><div class="actype">廉航直飛</div><div class="acprice">~£60-90單程</div></div></a>
+        <a href="https://ryanair.com" target="_blank" class="airline-card"><span class="acico">🟡</span><div><div class="acname">Ryanair</div><div class="actype">廉航</div><div class="acprice">~£50-85單程</div></div></a>
+        <a href="https://austrian.com" target="_blank" class="airline-card"><span class="acico">🔴</span><div><div class="acname">Austrian</div><div class="actype">經維也納</div><div class="acprice">~£120-180單程</div></div></a>
+        <a href="https://lufthansa.com" target="_blank" class="airline-card"><span class="acico">🔵</span><div><div class="acname">Lufthansa</div><div class="actype">經法蘭克福</div><div class="acprice">~£130-200單程</div></div></a>
+        <a href="https://ita-airways.com" target="_blank" class="airline-card"><span class="acico">🇮🇹</span><div><div class="acname">ITA Airways</div><div class="actype">飛 Venice/Rome</div><div class="acprice">~£90-150單程</div></div></a>
+      </div>
+      <div class="tip-box" style="margin-top:12px;margin-bottom:0">🗺️ <strong>隱藏平貨：</strong>飛 Venice Marco Polo (VCE) 或 Trieste (TRS) → 再租車入斯洛文尼亞，只需約2小時。有時比直飛 Ljubljana 平 40-50%！</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ HOTELS ══════ -->
+
+<div id="hotels" class="sec">
+  <div class="slbl">📍 Lake Bled — 2晚</div>
+  <div class="hcard" onclick="openPlace('golf-hotel-bled')" style="cursor:pointer">
+    <div class="himg" style="background:linear-gradient(135deg,#2c6e9b,#1a4a35)">⛳</div>
+    <div class="hbody"><div class="hname">Golf Hotel Bled ↗</div><div class="hloc">📍 Golf Club Bled 球場內</div><div class="stars">★★★★</div><div class="hprice">~£100-130/晚（2間房合計）</div><div class="htags"><span class="htag">在球場內</span><span class="htag">湖景</span><span class="htag">Spa</span></div></div>
+  </div>
+  <div class="hcard" onclick="openPlace('bled-bnb')" style="cursor:pointer">
+    <div class="himg" style="background:linear-gradient(135deg,#1a4a6e,#0e2a3e)">🏡</div>
+    <div class="hbody"><div class="hname">Bled 湖畔精品 B&B ↗</div><div class="hloc">📍 Lake Bled 步行距離</div><div class="stars">★★★★</div><div class="hprice">~£80-100/晚（2間房合計）</div><div class="htags"><span class="htag">湖景</span><span class="htag">包早餐</span></div></div>
+  </div>
+  <div class="dvdr"></div><div class="slbl">📍 Goriška Brda — 2晚</div>
+  <div class="hcard" onclick="openPlace('valentina')" style="cursor:pointer">
+    <div class="himg" style="background:linear-gradient(135deg,#2d6a4f,#1a4030)">🍇</div>
+    <div class="hbody"><div class="hname">Valentina Guest House ↗</div><div class="hloc">📍 Šmartno 附近，Goriška Brda</div><div class="stars">★★★★</div><div class="hprice">~£65-90/晚（2間房合計）</div><div class="htags"><span class="htag">泳池</span><span class="htag">自家酒莊</span><span class="htag">包早餐</span></div></div>
+  </div>
+  <div class="hcard" onclick="openPlace('dvor')" style="cursor:pointer">
+    <div class="himg" style="background:linear-gradient(135deg,#5a8a3a,#2a4a1a)">🏰</div>
+    <div class="hbody"><div class="hname">Dvor Apartments ↗</div><div class="hloc">📍 Kozana，Goriška Brda</div><div class="stars">★★★★</div><div class="hprice">~£49-76/晚（2間房合計）</div><div class="htags"><span class="htag">中世紀古屋</span><span class="htag">花園泳池</span></div></div>
+  </div>
+  <div class="dvdr"></div><div class="slbl">📍 Piran — 2晚</div>
+  <div class="hcard" onclick="openPlace('piran-hotel')" style="cursor:pointer">
+    <div class="himg" style="background:linear-gradient(135deg,#2c6e9b,#1a405a)">🌊</div>
+    <div class="hbody"><div class="hname">Piran 古城海景民宿 ↗</div><div class="hloc">📍 Piran 古城中心</div><div class="stars">★★★</div><div class="hprice">~£70-90/晚（2間房合計）</div><div class="htags"><span class="htag">海景</span><span class="htag">步行到港口</span></div></div>
+  </div>
+  <div class="dvdr"></div><div class="slbl">📍 盧布爾雅那 — 1晚</div>
+  <div class="hcard" onclick="openPlace('lj-airbnb')" style="cursor:pointer">
+    <div class="himg" style="background:linear-gradient(135deg,#8b2635,#4a1020)">🏙</div>
+    <div class="hbody"><div class="hname">盧布爾雅那市中心 Airbnb ↗</div><div class="hloc">📍 老城區步行範圍</div><div class="stars">★★★</div><div class="hprice">~£50-65/晚（2間房合計）</div><div class="htags"><span class="htag">市中心</span><span class="htag">步行景點</span></div></div>
+  </div>
+</div>
+
+<!-- ══════ WINERIES ══════ -->
+
+<div id="wineries" class="sec">
+  <div class="tip-box">💡 去每間酒莊都可以話：<em style="color:var(--wl)">"I love Barolo – structured, tannic, high acidity"</em>，一定知道倒咩俾你！</div>
+  <div class="wcard" onclick="openPlace('scurek')" style="cursor:pointer"><div class="wname">Posestvo Ščurek ↗</div><div class="wreg">📍 Goriška Brda</div><div class="wstars">★★★★★</div><div class="wwine">🍷 Rebula · Merlot 混釀 · 白酒系列</div><div class="wbar">Barolo 相似度 ⭐⭐⭐ · 五代家族酒莊，山丘景色絕美</div></div>
+  <div class="wcard" onclick="openPlace('kabaj')" style="cursor:pointer;border-left-color:var(--gold)"><div class="wname">Kabaj Wine &amp; Dine ↗</div><div class="wreg">📍 Goriška Brda</div><div class="wstars">★★★★★</div><div class="wwine">🍷 Amphora 陶甕橙酒 · Rebula</div><div class="wbar">全球獨特陶甕釀法 · 可預訂農莊晚餐</div></div>
+  <div class="wcard" onclick="openPlace('teran')" style="cursor:pointer;border-left-color:var(--green)"><div class="wname">Karst Teran 生產商 ↗</div><div class="wreg">📍 喀斯特高原</div><div class="wstars">★★★★★</div><div class="wwine">🍷 <strong>TERAN ← 最接近 Barolo！</strong></div><div class="wbar" style="color:var(--wine)">高單寧 + 高酸度 + 深紅色 = 結構感媲美 Barolo</div></div>
+  <div class="wcard" onclick="openPlace('klet-brda')" style="cursor:pointer"><div class="wname">Klet Brda ↗</div><div class="wreg">📍 Goriška Brda (Dobrovo)</div><div class="wstars">★★★★</div><div class="wwine">🍷 Brda 系列精選 · 酒窖參觀</div><div class="wbar">區內最大酒莊，出口26個國家 · 隨時入場</div></div>
+  <div class="wcard" onclick="openPlace('vipava')" style="cursor:pointer"><div class="wname">Vipava Valley 小農戶 ↗</div><div class="wreg">📍 Vipava Valley</div><div class="wstars">★★★★</div><div class="wwine">🍷 Zelen · Pinela（全球獨有本土品種）</div><div class="wbar">別處買不到的稀有酒</div></div>
+  <div class="wcard" onclick="openPlace('lipica')" style="cursor:pointer;border-left-color:var(--blue)"><div class="wname">Lipica 白馬場 ↗</div><div class="wreg">📍 Karst 喀斯特高原</div><div class="wstars">★★★★</div><div class="wwine">🐴 世界名種利皮扎馬</div><div class="wbar">可選馬術表演 · 近 Teran 產區 · €13/人入場</div></div>
+</div>
+
+</div><!-- /main -->
+
+<!-- ══════ MODAL ══════ -->
+
+<div class="modal-bg" id="modalBg" onclick="closeModal(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-img" id="mImg">
+      <button class="modal-close" onclick="closeModalBtn()">✕</button>
+      <img id="mImgEl" src="" alt="" style="display:none">
+      <div id="mImgFb" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:64px;"></div>
+      <div class="modal-img-ov"></div>
+      <div class="modal-img-label" id="mTitle"></div>
+      <div class="modal-img-sub" id="mSub"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-type" id="mType"></div>
+      <div class="modal-name" id="mName"></div>
+      <div class="modal-loc" id="mLoc"></div>
+      <div class="modal-stars" id="mStars"></div>
+      <div class="modal-desc" id="mDesc"></div>
+      <div class="modal-details" id="mDetails"></div>
+      <div class="modal-tags" id="mTags"></div>
+      <div class="modal-links" id="mLinks"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════
+// PLACES DATABASE
+// ════════════════════════════════════
+const PLACES = {
+  'lake-bled':{type:'景點',name:'Lake Bled 布萊德湖',loc:'📍 朱利安阿爾卑斯山，Bled, Slovenia',stars:'★★★★★',bg:'linear-gradient(135deg,#2c6e9b,#1a4a35)',emoji:'🏔',desc:'斯洛文尼亞最標誌性景色。翡翠綠湖中央有座小島，島上白色教堂，背後聳立布萊德古堡，天晴時可見阿爾卑斯雪峰倒影。全球最上鏡的地方之一，是行程必到的蜜月勝地。',details:[['地址','Bled, Slovenia 4260'],['開放時間','全年開放（湖畔免費）'],['建議時間','半日至全日'],['最佳時間','清晨 7-9am 人少，光線最美']],tags:['免費入場','划艇可去小島','古堡 €15','允許泳水'],links:[{ico:'🌐',label:'官方旅遊網站',url:'https://www.bled.si/en'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Lake+Bled+Slovenia'},{ico:'📖',label:'維基百科',url:'https://en.wikipedia.org/wiki/Lake_Bled'}]},
+
+  'bled-boat':{type:'活動',name:'Bled 小島 pletna 木船',loc:'📍 Lake Bled 碼頭',stars:'★★★★★',bg:'linear-gradient(135deg,#2c6e9b,#4a8a5a)',emoji:'⛵',desc:'坐傳統 pletna 木船划去湖中小島是 Bled 最經典的體驗。由船夫手搖入島，島上有聖母升天教堂，爬99級石階到達教堂，拉響古鐘許願是浪漫蜜月必做的事！',details:[['費用','€15/人（來回）'],['航程','每程約20分鐘'],['島上時間','建議留 30-45 分鐘'],['預約','直接在碼頭找，無需預約']],tags:['必體驗','許願鐘','蜜月必做','旺季較多等候'],links:[{ico:'🗺',label:'Google Maps — Bled Island',url:'https://maps.google.com/?q=Bled+Island+Slovenia'},{ico:'🌐',label:'Bled 旅遊官網',url:'https://www.bled.si/en/what-to-do/bled-island'}]},
+
+  'bled-castle':{type:'景點',name:'Bled 古堡',loc:'📍 懸崖頂，俯瞰 Lake Bled',stars:'★★★★',bg:'linear-gradient(135deg,#8b5a14,#4a2a05)',emoji:'🏰',desc:'建於11世紀的古堡，高踞懸崖之上，提供 360° 全景俯瞰布萊德湖。城堡內有博物館、印刷房（可試印古書）、餐廳，黃昏時分景色最為壯觀。',details:[['入場費','€15/人（包纜車）'],['開放時間','8am-8pm（夏季）'],['建議時間','1-2小時'],['餐廳','Gostilna Grad — 景觀餐廳']],tags:['全景湖景','博物館','360°視野','可步行上去'],links:[{ico:'🌐',label:'官方網站',url:'https://www.blejski-grad.si/en'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Bled+Castle+Slovenia'}]},
+
+  'vintgar':{type:'景點',name:'Vintgar Gorge 峽谷棧道',loc:'📍 距 Bled 4km，Gorje',stars:'★★★★★',bg:'linear-gradient(135deg,#1a5a2a,#0e3015)',emoji:'🏞',desc:'距離布萊德湖只需10分鐘車程的峽谷秘境。木棧道沿翠綠急流而建，長1.6公里，終點是壯觀的 Šum 瀑布。清涼的峽谷空氣是夏天消暑的完美選擇，強烈建議早上8-9點去，人少！',details:[['入場費','€6/人'],['長度','1.6km 單程棧道'],['建議時間','1.5-2小時'],['開放時間','4月至11月，8am-7pm']],tags:['夏天必去','清涼峽谷','輕鬆健行','瀑布終點'],links:[{ico:'🌐',label:'官方網站',url:'https://www.vintgar.si/en'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Vintgar+Gorge+Slovenia'}]},
+
+  'kremsni':{type:'美食',name:'Kremšnita 奶油千層',loc:'📍 Park Cafe, Bled',stars:'★★★★★',bg:'linear-gradient(135deg,#c4a830,#8a6a10)',emoji:'🥐',desc:'Bled 最著名的甜品，當地稱為「Kremšnita」，係一款鮮奶油配蛋奶醬的千層餅。由 Park Hotel 旁的咖啡廳首創，現在全 Bled 都有售，但原版最正宗。來到 Bled 絕對不能不試！',details:[['價格','約 €4-6/件'],['正宗地點','Park Cafe, Bled（Hotel Park 旁）'],['口味','鮮奶油 + 蛋奶醬，甜而不膩'],['外帶','可外帶，注意保持冷藏']],tags:['Bled 必食','當地名物','甜品','旅遊打卡'],links:[{ico:'🌐',label:'Park Hotel Bled',url:'https://www.hotel-park.si/en/kremsnita'},{ico:'🗺',label:'Google Maps — Park Cafe',url:'https://maps.google.com/?q=Park+Cafe+Bled+Kremsnita'}]},
+
+  'golf-bled':{type:'活動',name:'Golf Club Bled',loc:'📍 Kidričeva 10c, 4260 Bled',stars:'★★★★★',bg:'linear-gradient(135deg,#2a5a14,#1a3a0e)',emoji:'⛳',desc:'斯洛文尼亞頂級高爾夫球場，亦是歐洲最美麗的球場之一。King\'s Course 18洞係錦標賽級場地，Lake\'s Course 9洞則較短小適合休閒。打球時面對布萊德湖和阿爾卑斯山的壯闊景色，絕無僅有的體驗。',details:[['King\'s Course','18洞，約 €80-120/人'],['Lake\'s Course','9洞，約 €45-65/人'],['開放時間','4月至10月'],['Club House','餐廳、更衣室、球具租用'],['電話','+386 4 579 1800']],tags:['歐洲最靚球場','湖景打球','阿爾卑斯背景','需提前預約'],links:[{ico:'🌐',label:'Golf Club Bled 官網',url:'https://www.golf.bled.si/en'},{ico:'📞',label:'WhatsApp / 電話預約',url:'tel:+38645791800'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Golf+Club+Bled'}]},
+
+  'golf-hotel-bled':{type:'住宿',name:'Golf Hotel Bled',loc:'📍 Golf Club Bled 球場內，Bled',stars:'★★★★',bg:'linear-gradient(135deg,#2c6e9b,#1a4a35)',emoji:'🏨',desc:'位於 Golf Club Bled 球場範圍內，是打高爾夫的最佳選擇。住客可享球場折扣，從房間窗戶望出去就是綠色球道和布萊德湖景色。設施完善，有 Spa、餐廳、游泳池。',details:[['價格','約 £50-65/間/晚'],['地點','Golf Club Bled 內，步行到第一洞'],['設施','Spa、游泳池、餐廳、球具租用'],['預訂','建議提早2-3個月（7月旺季）']],tags:['在球場內','湖景','Spa','包早餐'],links:[{ico:'🌐',label:'官方網站',url:'https://www.hotel-golf.si/en'},{ico:'🏨',label:'Booking.com',url:'https://www.booking.com/searchresults.html?ss=Golf+Hotel+Bled'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Golf+Hotel+Bled'}]},
+
+  'bled-bnb':{type:'住宿',name:'Bled 湖畔精品 B&B',loc:'📍 Lake Bled 步行範圍',stars:'★★★★',bg:'linear-gradient(135deg,#1a4a6e,#0e2a3e)',emoji:'🏡',desc:'Lake Bled 周邊有多間評分極高的精品 B&B，由當地家庭經營，早餐豐盛，主人熱情好客，往往可得到很多本地人才知道的旅遊貼士。',details:[['價格','約 £40-50/間/晚'],['建議搜尋','Bled B&B Booking.com 評分 8.5+'],['早餐','自家製，新鮮食材'],['位置','建議選擇步行到湖畔 10 分鐘以內']],tags:['湖景','包早餐','家庭經營','性價比高'],links:[{ico:'🏨',label:'Booking.com — Lake Bled B&B',url:'https://www.booking.com/searchresults.html?ss=Lake+Bled&nflt=class%3D3'},{ico:'🏠',label:'Airbnb — Bled',url:'https://www.airbnb.com/s/Bled--Slovenia/homes'}]},
+
+  'valentina':{type:'住宿',name:'Valentina Guest House @ Pintar Wine Estate',loc:'📍 Šmartno 附近，Goriška Brda',stars:'★★★★',bg:'linear-gradient(135deg,#2d6a4f,#1a4030)',emoji:'🍇',desc:'位於 Pintar 家族自家葡萄園上的精品民宿，有游泳池、早餐豐盛，在民宿就可試到自家釀製的 Rebula 白酒。主人親切，可安排酒莊參觀。是 Brda 地區最受好評的住宿之一。',details:[['價格','約 £30-45/間/晚（2室合計£65-90）'],['泳池','✅ 有游泳池'],['試酒','✅ 自家 Rebula 白酒'],['早餐','✅ 豐盛農莊早餐（包含）'],['預訂','Booking.com 或直接聯絡']],tags:['泳池','自家酒莊','包早餐','景觀絕佳'],links:[{ico:'🌐',label:'Pintar Wine Estate 官網',url:'https://www.pintarwine.com'},{ico:'🏨',label:'Booking.com',url:'https://www.booking.com/searchresults.html?ss=Valentina+Guest+House+Brda'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Valentina+Guest+House+Gori%C5%A1ka+Brda'}]},
+
+  'dvor':{type:'住宿',name:'Dvor Apartments',loc:'📍 Kozana, Goriška Brda',stars:'★★★★',bg:'linear-gradient(135deg,#5a8a3a,#2a4a1a)',emoji:'🏰',desc:'中世紀石砌古屋翻新的精品公寓，花園泳池，早餐豐盛，近 Šmartno 古村。充滿歷史感的住宿體驗，在葡萄園環繞的環境中享受悠閒時光。',details:[['價格','約 £25-38/間/晚（2室合計£49-76）'],['泳池','✅ 花園泳池'],['風格','中世紀石屋翻新'],['地點','近 Šmartno 古村步行5分鐘'],['早餐','豐盛當地食材']],tags:['中世紀建築','花園泳池','包早餐','近古村'],links:[{ico:'🏨',label:'Booking.com',url:'https://www.booking.com/searchresults.html?ss=Dvor+Kozana+Brda'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Dvor+Kozana+Gori%C5%A1ka+Brda'}]},
+
+  'piran-hotel':{type:'住宿',name:'Piran 古城海景民宿',loc:'📍 Piran 古城中心，Tartini Square 附近',stars:'★★★',bg:'linear-gradient(135deg,#2c6e9b,#1a405a)',emoji:'🌊',desc:'Piran 古城內有多間評分極高的海景民宿，由當地家庭經營。從窗口可直望亞德里亞海，早上醒來聽海浪聲，晚上在海港邊吃海鮮，是整個行程最浪漫的兩晚。',details:[['價格','約 £35-45/間/晚（2室合計£70-90）'],['位置','Piran 古城步行區（駕車需泊城外）'],['海景','✅ 亞德里亞海景'],['到港口','步行 5-10 分鐘']],tags:['海景','城中心','步行到港口','浪漫'],links:[{ico:'🏨',label:'Booking.com — Piran',url:'https://www.booking.com/searchresults.html?ss=Piran+Old+Town+Slovenia'},{ico:'🏠',label:'Airbnb — Piran',url:'https://www.airbnb.com/s/Piran--Slovenia/homes'}]},
+
+  'lj-airbnb':{type:'住宿',name:'盧布爾雅那市中心住宿',loc:'📍 Ljubljana Old Town，步行範圍',stars:'★★★',bg:'linear-gradient(135deg,#8b2635,#4a1020)',emoji:'🏙',desc:'盧布爾雅那老城區是步行城市，住在中心區可步行到所有景點。Airbnb 私人房間或精品青旅均是預算友好的選擇。',details:[['價格','約 £25-33/間/晚（2室合計£50-65）'],['建議地點','老城區附近（Triple Bridge 步行 10 分鐘）'],['公共交通','市中心大部分免費步行'],['停車','市區泊車較貴，建議 Park & Ride']],tags:['市中心','步行景點','預算友好'],links:[{ico:'🏠',label:'Airbnb — Ljubljana',url:'https://www.airbnb.com/s/Ljubljana--Slovenia/homes'},{ico:'🏨',label:'Booking.com — Ljubljana',url:'https://www.booking.com/searchresults.html?ss=Ljubljana+City+Center'},{ico:'🗺',label:'Google Maps — Ljubljana',url:'https://maps.google.com/?q=Ljubljana+Old+Town'}]},
+
+  'scurek':{type:'酒莊',name:'Posestvo Ščurek',loc:'📍 Gornje Cerovo 4, Goriška Brda',stars:'★★★★★',bg:'linear-gradient(135deg,#8b2635,#2d6a4f)',emoji:'🍷',desc:'五代家族酒莊，是 Goriška Brda 最受歡迎的導覽酒莊之一。由家族成員親自帶領品酒，分享每一款酒背後的故事。山丘上的酒莊景色絕美，試酒時可俯瞰整個葡萄酒山丘。',details:[['品酒費','約 €12/人（含4-5款酒）'],['導覽','家族成員親自帶領（需預約）'],['主打','Rebula、Merlot、橙酒'],['Barolo 相似度','⭐⭐⭐ — 有結構感紅酒'],['預約','強烈建議提前預約']],tags:['需預約','家族導覽','Rebula','景色絕美','Barolo愛好者推薦'],links:[{ico:'🌐',label:'官方網站',url:'https://www.poscurek.com'},{ico:'📧',label:'電郵預約',url:'mailto:info@poscurek.com'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Posestvo+%C5%A0%C4%8Durek+Brda'}]},
+
+  'kabaj':{type:'酒莊',name:'Kabaj Wine & Dine',loc:'📍 Šlovrenc 1a, Goriška Brda',stars:'★★★★★',bg:'linear-gradient(135deg,#b8893a,#5a3010)',emoji:'🏺',desc:'全球獨特的陶甕（Amphora）釀酒師，是橙酒的代表人物。Kabaj 的橙酒在自然光線下呈現深琥珀色，口感複雜，單寧豐富。可配套預訂農莊晚餐，食物配酒的體驗難忘。素食和純素選項也有提供。',details:[['品酒費','約 €15/人（含5款酒）'],['農莊晚餐','可另外預訂（約 €35-50/人）'],['主打','Amphora 橙酒、Rebula、Merlot'],['Barolo 相似度','⭐⭐ — 橙酒風格，結構感佳'],['預約','必須提前預約']],tags:['必須預約','橙酒先驅','陶甕釀造','農莊晚餐','素食友好'],links:[{ico:'🌐',label:'官方網站',url:'https://www.kabaj.net'},{ico:'📧',label:'電郵預約',url:'mailto:info@kabaj.net'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Kabaj+Winery+Brda'}]},
+
+  'klet-brda':{type:'酒莊',name:'Klet Brda 合作酒莊',loc:'📍 Zadnja Kmetija 2, Dobrovo, Goriška Brda',stars:'★★★★',bg:'linear-gradient(135deg,#2d6a4f,#1a3a20)',emoji:'🏭',desc:'Goriška Brda 最大的葡萄酒生產商，由超過350個家庭農戶組成的合作社。出口至26個國家，是了解整個 Brda 地區葡萄酒的最佳入門地點。有酒窖參觀和系統性品酒，無需提前預約。',details:[['入場品酒','約 €10/人（含4款酒）'],['酒窖參觀','開放時間內隨時入場'],['出口','26個國家，英國超市有售'],['地點','Dobrovo 村中心，好認'],['開放','週一至週六 9am-6pm']],tags:['無需預約','最大酒莊','系統品酒','隨時入場'],links:[{ico:'🌐',label:'官方網站',url:'https://www.klet-brda.si/en'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Klet+Brda+Dobrovo'}]},
+
+  'teran':{type:'酒莊',name:'Karst Teran 本地生產商',loc:'📍 喀斯特高原，Sežana 附近',stars:'★★★★★',bg:'linear-gradient(135deg,#7a1a2a,#3a0a10)',emoji:'🍷',desc:'Teran 是用 Refosco 葡萄在喀斯特高原的 terra rossa 紅土上釀製的紅酒，以高酸度、高單寧、深寶石紅色著名，是全斯洛文尼亞最接近 Barolo 風格的紅酒。建議請 B&B 主人介紹本地家族小農戶，往往可直接去農舍試酒。',details:[['品酒費','約 €8-10/人（小農戶）'],['主打','Teran（最接近 Barolo！）'],['Barolo 相似度','⭐⭐⭐⭐⭐ — 高單寧、高酸度、結構感'],['特點','terra rossa 紅土賦予獨特礦物感'],['如何找','問 B&B 主人介紹本地農戶']],tags:['最接近Barolo','高單寧','高酸度','Barolo愛好者必試','小農戶體驗'],links:[{ico:'🌐',label:'Karst Teran 產區資訊',url:'https://www.slovenia.info/en/places-to-go/regions/kras'},{ico:'🗺',label:'Google Maps — Karst Region',url:'https://maps.google.com/?q=Kras+Karst+Slovenia'}]},
+
+  'vipava':{type:'酒莊',name:'Vipava Valley 本地酒農',loc:'📍 Vipava Valley，Ajdovščina 附近',stars:'★★★★',bg:'linear-gradient(135deg,#3a6a2a,#1a3a10)',emoji:'🌿',desc:'Vipava Valley 以本土白葡萄品種 Zelen 和 Pinela 聞名，是全球唯一可以找到這兩種品種的地方。當地有多間小農戶開放品酒，大部分無需預約，是最具冒險精神的酒莊體驗。',details:[['品酒費','約 €8-12/人'],['主打','Zelen（獨有白酒）、Pinela（獨有白酒）'],['特點','全球只有這裡有的本土品種'],['如何找','地區旅遊中心或問 Bled/Brda B&B'],['時間','建議停留約半天']],tags:['全球獨有品種','無需預約','小農戶','冒險體驗'],links:[{ico:'🌐',label:'Vipava Valley 旅遊',url:'https://www.vipavska-dolina.si/en'},{ico:'🗺',label:'Google Maps — Vipava Valley',url:'https://maps.google.com/?q=Vipava+Valley+Slovenia'}]},
+
+  'lipica':{type:'景點',name:'Lipica 白馬場 (Kobilarna Lipica)',loc:'📍 Lipica 5, 6210 Sežana, Slovenia',stars:'★★★★',bg:'linear-gradient(135deg,#4a6a9a,#1a3a5a)',emoji:'🐴',desc:'世界最著名的馬場之一，利皮扎（Lipizzaner）白馬的發源地。建於1580年，超過400年歷史。可參觀馬廄、觀看馬術訓練，亦可選購馬術表演門票。近 Karst Teran 產區，可順道品酒。',details:[['入場費','€13/人（基本參觀）'],['馬術表演','另加 €22-28/人（需預約）'],['開放時間','4月至10月，每日 9am-6pm'],['距 Bled','約2小時車程'],['距 Piran','約40分鐘車程']],tags:['歷史景點','白馬','馬術表演','近Teran產區'],links:[{ico:'🌐',label:'官方網站',url:'https://www.lipica.org/en'},{ico:'🎟',label:'網上訂票',url:'https://www.lipica.org/en/buy-tickets'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Lipica+Stud+Farm+Slovenia'}]},
+
+  'piran':{type:'景點',name:'Piran 古城',loc:'📍 Piran, Slovenian Istria 海岸',stars:'★★★★★',bg:'linear-gradient(135deg,#2c6e9b,#1a405a)',emoji:'🌊',desc:'斯洛文尼亞最迷人的海岸古城，威尼斯共和國時代遺留的建築風格，窄小的石板巷道、彩色房子、港口邊的海鮮餐廳。Tartini 廣場係城中心，聖喬治教堂鐘樓可俯瞰全城。夕陽時份，坐在海堤上配一杯 Malvasia 白酒和新鮮海鮮，是整個蜜月行程最浪漫的時刻。',details:[['入城','步行（駕車需泊城牆外）'],['聖喬治教堂','免費參觀，鐘樓俯瞰全城'],['海鮮餐廳','港口邊多間，預算 €25-40/人'],['海灘','城外 Fiesa 海灘，步行 15 分鐘']],tags:['威尼斯風格','海鮮必食','夕陽打卡','步行古城','亞德里亞海'],links:[{ico:'🌐',label:'Piran 旅遊官網',url:'https://www.portoroz.si/en/piran'},{ico:'🗺',label:'Google Maps',url:'https://maps.google.com/?q=Piran+Old+Town+Slovenia'},{ico:'🍽',label:'TripAdvisor — Piran 餐廳',url:'https://www.tripadvisor.com/Restaurants-g274903-Piran_Slovenian_Istria.html'}]},
+};
+
+// ════════════════════════════════════
+// MODAL FUNCTIONS
+// ════════════════════════════════════
+function openPlace(id) {
+  const p = PLACES[id]; if (!p) return;
+  document.getElementById('mType').textContent = p.type;
+  document.getElementById('mTitle').textContent = p.name;
+  document.getElementById('mSub').textContent = p.loc;
+  document.getElementById('mName').textContent = p.name;
+  document.getElementById('mLoc').innerHTML = p.loc;
+  document.getElementById('mStars').textContent = p.stars || '';
+  document.getElementById('mDesc').textContent = p.desc;
+  // BG
+  const imgEl = document.getElementById('mImgEl');
+  const fb = document.getElementById('mImgFb');
+  const imgWrap = document.getElementById('mImg');
+  imgWrap.style.background = p.bg;
+  imgEl.style.display = 'none';
+  fb.textContent = p.emoji || '📍';
+  // Details
+  const det = document.getElementById('mDetails');
+  if (p.details && p.details.length) {
+    det.innerHTML = p.details.map(([k,v]) => `<div class="mdrow"><span class="mdkey">${k}</span><span class="mdval">${v}</span></div>`).join('');
+    det.style.display = 'block';
+  } else { det.style.display = 'none'; }
+  // Tags
+  document.getElementById('mTags').innerHTML = (p.tags || []).map(t => `<span class="mtag">${t}</span>`).join('');
+  // Links
+  document.getElementById('mLinks').innerHTML = (p.links || []).map(l =>
+    `<a href="${l.url}" target="_blank" class="mlink"><span class="mlink-ico">${l.ico}</span><span>${l.label}</span><span class="mlink-arr">↗</span></a>`
+  ).join('');
+  const bg = document.getElementById('modalBg');
+  bg.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) { if (e.target === document.getElementById('modalBg')) closeModalBtn(); }
+function closeModalBtn() {
+  document.getElementById('modalBg').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ════════════════════════════════════
+// FLIGHT SEARCH
+// ════════════════════════════════════
+function openSearch(engine) {
+  const dep = document.getElementById('fdep').value;
+  const arr = document.getElementById('farr').value;
+  const date = document.getElementById('fdate').value;
+  const ret = document.getElementById('fret').value;
+  const pax = document.getElementById('fpax').value;
+
+  // Format dates for URLs
+  const formatSky = (d) => {
+    const months = {Jan:'01',Feb:'02',Mar:'03',Apr:'04',May:'05',Jun:'06',Jul:'07',Aug:'08',Sep:'09',Oct:'10',Nov:'11',Dec:'12'};
+    const parts = d.trim().split(' ');
+    return `${parts[2]}-${months[parts[1]] || '07'}-${parts[0].padStart(2,'0')}`;
+  };
+
+  // Airport codes mapping
+  const airportCode = (city) => {
+    const map = {'London':'LON','London Gatwick':'LGW','London Stansted':'STN','London Heathrow':'LHR','London Luton':'LTN','Manchester':'MAN','Birmingham':'BHX','Ljubljana':'LJU','Venice':'VCE','Trieste':'TRS','Vienna':'VIE','Zagreb':'ZAG'};
+    return map[city] || city.substring(0,3).toUpperCase();
+  };
+
+  const depCode = airportCode(dep);
+  const arrCode = airportCode(arr);
+  const outDate = formatSky(date);
+  const retDate = formatSky(ret);
+
+  let url = '';
+  if (engine === 'skyscanner') {
+    url = `https://www.skyscanner.net/transport/flights/${depCode.toLowerCase()}/${arrCode.toLowerCase()}/${outDate.replace(/-/g,'').slice(2)}/${retDate.replace(/-/g,'').slice(2)}/?adults=${pax}&cabinclass=economy`;
+  } else if (engine === 'google') {
+    url = `https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTA3LTIzagcIARIDTEdXcgcIARIDTEpVGh4SCjIwMjYtMDctMjlqBwgBEgNMSlVyBwgBEgNMR1c&hl=en&curr=GBP`;
+    // Simplified google flights URL
+    url = `https://www.google.com/flights#flt=${depCode}.${arrCode}.${outDate}*${arrCode}.${depCode}.${retDate};c:GBP;e:1;sd:1;t:f;tt:o`;
+  } else if (engine === 'kayak') {
+    url = `https://www.kayak.co.uk/flights/${depCode}-${arrCode}/${outDate}/${retDate}/${pax}adults`;
+  } else if (engine === 'momondo') {
+    url = `https://www.momondo.co.uk/flight-search/${dep.replace(/ /g,'-')}-${arr.replace(/ /g,'-')}/${outDate}/${retDate}?adults=${pax}`;
+  }
+  window.open(url, '_blank');
+}
+
+// ════════════════════════════════════
+// ITINERARY DATA
+// ════════════════════════════════════
+const DAYS = [
+  {sd:"四",dt:"23",mo:"Jul",title:"抵達 盧布爾雅那",sub:"第1天 — 首都探索 + Wine Bar",bg:"linear-gradient(120deg,#c4485a,#8b2635)",em:"🏙",
+   tl:[
+    {t:"抵達",ti:"降落盧布爾雅那機場",de:"取租車，駕車入市中心約25分鐘。"},
+    {tp:"drive",de:"機場 → 市中心：25分鐘，25km"},
+    {t:"下午",ti:"Check in + 歇息",de:'放低行李。步行到 <span class="chip b" onclick="openPlace(\'lake-bled\')" style="vertical-align:middle">📍 Triple Bridge</span> 附近探索。'},
+    {t:"17:00",ti:"老城區漫步",de:'<span class="chip" onclick="openPlace(\'piran\')" style="vertical-align:middle">🏰 Ljubljana 古堡</span>（纜車上去€10）、龍橋打卡、Prešeren 廣場。'},
+    {tp:"rest",de:"晚餐前30分鐘歇腳 ☕"},
+    {t:"19:30",ti:"Wine Bar 開胃",de:"試斯洛文尼亞葡萄酒，點一杯 Rebula 或 Furmint。預算約 £20/人。"},
+  ]},
+  {sd:"五",dt:"24",mo:"Jul",title:"盧布爾雅那 → Lake Bled",sub:"第2天 — 夢幻湖景 + 古堡",bg:"linear-gradient(120deg,#3a8fbf,#2c6e9b)",em:"🏔",
+   tl:[
+    {t:"08:30",ti:"早餐 + Check out",de:"中央市場買新鮮麵包、芝士、火腿做野餐材料。"},
+    {tp:"drive",de:"盧布爾雅那 → Lake Bled：50分鐘，55km（A2 高速）"},
+    {t:"10:00",ti:"Lake Bled 初見！",de:'<span class="chip b" onclick="openPlace(\'lake-bled\')" style="vertical-align:middle">🏔 Lake Bled</span> Ojstrica 觀景台打卡，然後坐 <span class="chip b" onclick="openPlace(\'bled-boat\')" style="vertical-align:middle">⛵ pletna 木船</span> 划去小島，€15/人。'},
+    {tp:"rest",de:"坐在木船上放空 🥂"},
+    {t:"12:30",ti:"島上許願鐘",de:'爬99級石階登上聖母教堂，拉響古鐘許願。浪漫！然後試試 <span class="chip gd" onclick="openPlace(\'kremsni\')" style="vertical-align:middle">🥐 Kremšnita 千層</span>。'},
+    {t:"15:30",ti:"Check in",de:'<span class="chip gd" onclick="openPlace(\'golf-hotel-bled\')" style="vertical-align:middle">🏨 Golf Hotel Bled</span> 或湖畔 B&B，放低行李歇腳。'},
+    {t:"17:00",ti:"Bled 古堡黃昏",de:'<span class="chip" onclick="openPlace(\'bled-castle\')" style="vertical-align:middle">🏰 Bled 古堡</span>，€15/人。居高臨下睇整個湖，黃昏光線最靚。'},
+    {t:"19:30",ti:"湖畔晚餐",de:"景色絕美。試本地牛肉燉菜配 Blaufränkisch 紅酒。"},
+  ]},
+  {sd:"六",dt:"25",mo:"Jul",title:"Vintgar 峽谷 + ⛳ Golf!",sub:"第3天 — 峽谷健行 + Golf Club Bled",bg:"linear-gradient(120deg,#3da86e,#2d6a4f)",em:"⛳",
+   tl:[
+    {t:"08:00",ti:"Vintgar 峽谷",de:'趁早去人少！<span class="chip g" onclick="openPlace(\'vintgar\')" style="vertical-align:middle">🥾 Vintgar Gorge</span>，€6/人。木棧道1.6km，清涼壯觀，約1.5小時。'},
+    {tp:"rest",de:"峽谷出口咖啡車，坐低嘆杯先！☕"},
+    {t:"10:30",ti:"回酒店換球衫",de:'準備出發去 <span class="chip b" onclick="openPlace(\'golf-bled\')" style="vertical-align:middle">⛳ Golf Club Bled</span>！'},
+    {tp:"golf",de:'⛳ <span class="chip b" onclick="openPlace(\'golf-bled\')" style="vertical-align:middle">Golf Club Bled</span> — King\'s Course 18洞 or Lake\'s Course 9洞'},
+    {t:"11:30",ti:"Golf Club Bled 開球！",de:'背景係布萊德湖 + 阿爾卑斯山，歐洲最靚球場之一。約 €80-120/人。提前預約：<span class="chip b" onclick="openPlace(\'golf-bled\')" style="vertical-align:middle">golf.bled.si</span>'},
+    {tp:"rest",de:"打完 Club House 飲杯啤酒 🍺"},
+    {t:"17:30",ti:"Bled 湖邊黃昏散步",de:"打完波最完美 cool down。"},
+    {t:"19:30",ti:"Bled 鎮晚餐",de:"試 Žlikrofi 餃子配本地 Refošk 紅酒。"},
+  ]},
+  {sd:"日",dt:"26",mo:"Jul",title:"Bled → Goriška Brda",sub:"第4天 — 進入葡萄酒王國",bg:"linear-gradient(120deg,#6ecf96,#3a9a62)",em:"🍇",
+   tl:[
+    {t:"09:00",ti:"Check out Bled",de:"最後拍一次湖景！買野餐材料出發。"},
+    {tp:"drive",de:"Lake Bled → Goriška Brda：約1.5小時，100km 沿 A2"},
+    {t:"11:00",ti:"Šmartno 中世紀古村",de:"泊車步行入村，石板路葡萄藤爬牆，彷彿走入500年前。免費。"},
+    {t:"13:00",ti:"葡萄園野餐",de:"山丘葡萄園裡鋪毯子，芝士、火腿、麵包配一瓶 Rebula 🍇"},
+    {t:"15:00",ti:"Check in",de:'<span class="chip g" onclick="openPlace(\'valentina\')" style="vertical-align:middle">🍇 Valentina Guest House</span> 或 <span class="chip g" onclick="openPlace(\'dvor\')" style="vertical-align:middle">🏰 Dvor Apartments</span>。問主人推薦酒莊。'},
+    {t:"17:00",ti:"Klet Brda 初探",de:'<span class="chip g" onclick="openPlace(\'klet-brda\')" style="vertical-align:middle">🍷 Klet Brda</span>，隨時入場，試整個 Brda 地區概覽。€10/人。'},
+    {t:"19:30",ti:"B&B 農莊晚餐",de:"自家製晚餐，新鮮食材 + 自產酒。旅程必吃之一！"},
+  ]},
+  {sd:"一",dt:"27",mo:"Jul",title:"Goriška Brda 品酒日",sub:"第5天 — 深度酒莊體驗",bg:"linear-gradient(120deg,#c4485a,#8b2635)",em:"🍷",
+   tl:[
+    {t:"09:00",ti:"Ščurek 酒莊早上導覽",de:'<span class="chip" onclick="openPlace(\'scurek\')" style="vertical-align:middle">🍷 Posestvo Ščurek</span>，家族成員親自帶領，試 Rebula、Merlot。€12/人，需提前預約。'},
+    {tp:"rest",de:"試酒前食點野！空肚試酒唔係好主意 😅"},
+    {t:"12:00",ti:"傳統農莊午餐",de:"當地 konoba 農莊餐廳，試 Jota 燉豆湯 + 新鮮麵包。"},
+    {t:"14:00",ti:"Kabaj 陶甕橙酒",de:'<span class="chip gd" onclick="openPlace(\'kabaj\')" style="vertical-align:middle">🏺 Kabaj Wine & Dine</span>，陶甕釀橙酒代表。提前預約！€15/人，可加訂農莊晚餐。'},
+    {t:"16:30",ti:"Bjana 古酒窖",de:"1808年古窖，建築超美，試試氣泡酒。"},
+    {tp:"rest",de:"晚餐前1小時休息 — 今天試了好多酒！💤"},
+    {t:"19:30",ti:"葡萄園平台日落晚餐",de:"叫 B&B 主人推薦最靚露天餐廳。Brda 黃昏係橙金色的 ✨"},
+  ]},
+  {sd:"二",dt:"28",mo:"Jul",title:"Karst + Vipava → Piran",sub:"第6天 — Teran 紅酒 + 海岸古城",bg:"linear-gradient(120deg,#b8893a,#8a6220)",em:"🌊",
+   tl:[
+    {t:"09:00",ti:"Check out Goriška Brda",de:"告別 B&B 主人！裝好行李。"},
+    {tp:"drive",de:"Brda → Karst 喀斯特高原：45分鐘，55km"},
+    {t:"10:00",ti:"Lipica 白馬場",de:'<span class="chip b" onclick="openPlace(\'lipica\')" style="vertical-align:middle">🐴 Kobilarna Lipica</span>，€13/人。世界名種利皮扎馬。'},
+    {t:"12:00",ti:"品嚐 TERAN！",de:'<span class="chip" onclick="openPlace(\'teran\')" style="vertical-align:middle">🍷 Karst Teran</span> — 最接近 Barolo 的斯洛文尼亞酒！高單寧高酸度。問 B&B 介紹本地小農戶。'},
+    {tp:"drive",de:"Karst → Vipava Valley：20分鐘"},
+    {t:"14:30",ti:"Vipava 獨有白酒",de:'<span class="chip g" onclick="openPlace(\'vipava\')" style="vertical-align:middle">🌿 Vipava Valley</span>，試 Zelen + Pinela — 全球只有這裡有！'},
+    {tp:"drive",de:"Vipava → Piran：45分鐘，60km"},
+    {t:"17:30",ti:"Check in Piran",de:'<span class="chip b" onclick="openPlace(\'piran-hotel\')" style="vertical-align:middle">🌊 Piran 海景民宿</span>。泊車在城牆外！'},
+    {t:"19:30",ti:"Piran 海港海鮮晚餐！",de:'<span class="chip b" onclick="openPlace(\'piran\')" style="vertical-align:middle">🌊 Piran 古城</span> 海港邊，新鮮魚 + Malvasia 白酒。旅程最美一餐！'},
+  ]},
+  {sd:"三",dt:"29",mo:"Jul",title:"Piran 悠閒 → 飛回家",sub:"第7天 — 最後陽光，帶酒回家",bg:"linear-gradient(120deg,#3a8fbf,#2c6e9b)",em:"🌅",
+   tl:[
+    {t:"08:30",ti:"最後早餐",de:'<span class="chip b" onclick="openPlace(\'piran\')" style="vertical-align:middle">🌊 Piran</span> 海邊咖啡廳，espresso + 新鮮包，望住亞德里亞海。'},
+    {t:"10:00",ti:"最後古城漫步",de:"Tartini 廣場、聖喬治教堂鐘樓俯瞰全城，最後打卡。"},
+    {tp:"rest",de:"坐在海堤上放空 🌊"},
+    {t:"12:00",ti:"Check out + 買酒！",de:"城中酒鋪買幾支本地酒帶回英國。記住有酒瓶保護袋！"},
+    {tp:"drive",de:"Piran → 盧布爾雅那機場：1小時45分鐘，120km"},
+    {t:"14:30",ti:"還車 + 機場 Check in",de:"還車留30分鐘手續。確認油量、車況報告。"},
+    {t:"夜",ti:"飛回倫敦 🇬🇧",de:"帶著一肚子酒、一腦袋回憶 ❤️"},
+  ]},
+];
+
+const CL=[
+  {s:"🔴 火速去辦 — 現在就做",items:[
+    {l:"訂機票（倫敦 ↔ 盧布爾雅那）",n:"Skyscanner / Google Flights，7月要快搶！",u:true},
+    {l:"租車 — 自動波 7 天",n:"Sixt / Europcar，7月自動波大缺貨！",u:true},
+    {l:"訂 Lake Bled 住宿 2晚",n:"Golf Hotel Bled 或湖畔 B&B，2間房",u:true},
+    {l:"訂 Goriška Brda B&B 2晚",n:"Valentina / Dvor，Booking.com",u:true},
+    {l:"訂 Piran 古城民宿 2晚",n:"Booking.com，要有海景！",u:true},
+    {l:"預約 Golf Club Bled",n:"golf.bled.si — 7月名額有限！",u:true},
+  ]},
+  {s:"🟡 出發前 4-6 週",items:[
+    {l:"訂 盧布爾雅那 住宿 1晚",n:"Airbnb 或精品青旅"},
+    {l:"預約 Ščurek 酒莊導覽",n:"poscurek.com — 家族親自帶領"},
+    {l:"預約 Kabaj 陶甕橙酒品試",n:"kabaj.net，可加訂農莊晚餐"},
+    {l:"訂電動單車 Goriška Brda",n:"問 B&B 或搜 'Brda e-bike hire'"},
+    {l:"申請國際駕駛執照 IDP",n:"英國 AA 或郵局，斯洛文尼亞必需"},
+    {l:"買旅遊保險（4人）",n:"MoneySupermarket 比較"},
+  ]},
+  {s:"📋 行政事項",items:[
+    {l:"通知銀行海外旅遊（4人）",n:"防止信用卡被凍結"},
+    {l:"下載離線地圖 Maps.me",n:"斯洛文尼亞離線地圖"},
+    {l:"檢查護照有效期 6 個月+",n:"4本護照全部查"},
+    {l:"確認租車包括 Vignette",n:"問租車公司確認"},
+  ]},
+  {s:"🟢 到埗再辦 / 可選",items:[
+    {l:"Lipica 白馬場門票",n:"lipicastud.si 或現場 €13"},
+    {l:"Bled 島木船（pletna）",n:"湖邊直接找，€15/人"},
+    {l:"Vintgar 峽谷入場",n:"現場 €6/人"},
+    {l:"Bled 古堡",n:"現場 €15/人"},
+  ]},
+];
+
+const PK=[{e:"🛂",l:"護照（有效期6個月+）"},{e:"🚗",l:"IDP + 英國駕照"},{e:"💳",l:"旅行卡 / 歐元現金"},{e:"📱",l:"已下載離線地圖"},{e:"🔌",l:"歐洲插頭轉換器 C 型"},{e:"⛳",l:"球衫 + 球鞋"},{e:"🎽",l:"高球手套 + 球帽"},{e:"👗",l:"輕便休閒 outfit × 3"},{e:"👟",l:"舒適行路鞋"},{e:"🧴",l:"防曬 SPF50"},{e:"🕶",l:"太陽眼鏡"},{e:"👒",l:"遮陽帽"},{e:"💊",l:"個人藥物"},{e:"🤧",l:"旅行急救包"},{e:"🍾",l:"酒瓶保護袋"},{e:"🔧",l:"開瓶器！必帶 🍷"},{e:"📷",l:"相機 / GoPro"},{e:"🔋",l:"尿袋 Power Bank"},{e:"👙",l:"泳衣（Piran + Bled）"},{e:"📝",l:"行程紙本備份"}];
+
+// ════════════════════════════════════
+// RENDER FUNCTIONS
+// ════════════════════════════════════
+function renderIt(){
+  document.getElementById('dayStrip').innerHTML=DAYS.map((d,i)=>
+    `<button class="dbt${i===0?' active':''}" onclick="selDay(${i})" id="db${i}">
+      <span class="dn">${d.sd}</span><span class="dd">${d.dt}</span><span class="dm">${d.mo}</span>
+    </button>`).join('');
+  document.getElementById('daycards').innerHTML=DAYS.map((d,i)=>
+    `<div class="dc${i===0?' active':''}" id="dc${i}">
+      <div class="dhero" style="background:${d.bg}">
+        <div class="dhov"></div>
+        <div class="dbdg">${d.em} 第${i+1}天</div>
+        <div class="dhc"><h3>${d.title}</h3><p>${d.sub}</p></div>
+      </div>
+      <div class="tlcard"><div class="tl">${d.tl.map(t=>{
+        if(t.tp==='drive') return `<div class="tli"><div class="tld" style="background:var(--gl2)"></div><span class="bdrive">🚗 駕車：${t.de}</span></div>`;
+        if(t.tp==='rest') return `<div class="tli"><div class="tld" style="background:var(--gold)"></div><span class="brest">☕ 休息：${t.de}</span></div>`;
+        if(t.tp==='golf') return `<div class="tli"><div class="tld" style="background:var(--blue)"></div><span class="bgolf">⛳ 高爾夫：${t.de}</span></div>`;
+        return `<div class="tli"><div class="tld"></div><div class="tlt">${t.t}</div><div class="tlti">${t.ti}</div><div class="tlde">${t.de}</div></div>`;
+      }).join('')}</div></div>
+    </div>`).join('');
+}
+
+function selDay(i){
+  document.querySelectorAll('.dbt').forEach((b,j)=>b.classList.toggle('active',j===i));
+  document.querySelectorAll('.dc').forEach((c,j)=>c.classList.toggle('active',j===i));
+  document.getElementById('db'+i).scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+
+let cs={};
+function renderCL(){
+  document.getElementById('clistc').innerHTML=CL.map((sec,si)=>
+    `<div class="css2"><div class="cst">${sec.s}</div>${sec.items.map((item,ii)=>{
+      const k=`${si}-${ii}`,done=cs[k];
+      return `<div class="ci${done?' done':''}" onclick="togC('${k}',this)">
+        ${item.u&&!done?'<div class="udot"></div>':''}
+        <div class="cbox">${done?'✓':''}</div>
+        <div><div class="cilbl">${item.l}</div>${item.n?`<div class="cinote">${item.n}</div>`:''}</div>
+      </div>`;
+    }).join('')}</div>`).join('');
+}
+function togC(k,el){cs[k]=!cs[k];el.classList.toggle('done',cs[k]);el.querySelector('.cbox').textContent=cs[k]?'✓':'';const d=el.querySelector('.udot');if(d)d.remove();}
+
+let ps={};
+function renderPack(){
+  document.getElementById('pgrid').innerHTML=`<div class="pgrid">${PK.map((p,i)=>
+    `<div class="pitem${ps[i]?' packed':''}" onclick="togP(${i})">
+      <span class="pe">${p.e}</span><span class="pilbl">${ps[i]?'✓ ':''}${p.l}</span>
+    </div>`).join('')}</div>`;
+  const tot=PK.length,done=Object.values(ps).filter(Boolean).length,pct=Math.round(done/tot*100);
+  const arc=document.getElementById('parc');if(arc)arc.style.strokeDashoffset=125.6-(125.6*pct/100);
+  const pp=document.getElementById('ppct');if(pp)pp.textContent=pct+'%';
+  const ps2=document.getElementById('psub');if(ps2)ps2.textContent=done===tot?'✅ 全部收拾好了！':`已收拾 ${done} / ${tot} 件`;
+}
+function togP(i){ps[i]=!ps[i];renderPack();}
+
+function showTab(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Init
+renderIt(); renderCL(); renderPack();
+</script>
+
+</body>
+</html>
