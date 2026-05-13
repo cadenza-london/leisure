@@ -43,8 +43,8 @@ body{background:var(--cream);color:var(--text);font-family:'Noto Sans HK',sans-s
 .tab:hover:not(.active){color:var(–text);}
 
 /* ── MAIN ── */
-.main{max-width:540px;margin:0 auto;padding:16px;}
-.sec{display:none;}.sec.active{display:block;}
+.main{max-width:540px;margin:0 auto;padding:16px;background:var(–cream);}
+.sec{display:none;background:transparent;}.sec.active{display:block;background:transparent;}
 
 /* ── CARD ── */
 .card{background:#fff;border:1px solid var(–bdr);border-radius:16px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 12px var(–sh);}
@@ -104,36 +104,49 @@ body{background:var(--cream);color:var(--text);font-family:'Noto Sans HK',sans-s
 /* ── DAY STRIP ── */
 .ds{display:flex;gap:7px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;scrollbar-width:none;}
 .ds::-webkit-scrollbar{display:none;}
-.dbt{flex-shrink:0;width:52px;height:58px;border-radius:12px;border:1.5px solid var(–bdr);background:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:all .18s;box-shadow:0 1px 6px var(–sh);}
-.dbt.active{background:var(–wine);border-color:var(–wine);box-shadow:0 4px 14px rgba(139,38,53,.3);transform:translateY(-2px);}
-.dbt .dn{font-size:9px;color:var(–t3);font-weight:600;letter-spacing:.5px;text-transform:uppercase;}
-.dbt .dd{font-size:15px;font-weight:800;color:var(–text);line-height:1;}
-.dbt .dm{font-size:9px;color:var(–t3);font-weight:500;}
-.dbt.active .dn{color:rgba(255,255,255,.8);}
-.dbt.active .dd{color:#fff;font-weight:800;}
-.dbt.active .dm{color:rgba(255,255,255,.8);}
+.dbt{flex-shrink:0;width:48px;height:64px;border-radius:12px;border:1.5px solid var(–bdr);
+background:#fff;cursor:pointer;display:flex;flex-direction:column;
+align-items:center;justify-content:center;gap:0;
+transition:all .18s;box-shadow:0 1px 6px var(–sh);padding:4px 0;}
+.dbt.active{background:var(–wine);border-color:var(–wine);
+box-shadow:0 4px 14px rgba(139,38,53,.3);transform:translateY(-2px);}
+.dbt .dn{font-size:9px;color:var(–t3);font-weight:700;letter-spacing:.3px;
+text-transform:uppercase;line-height:1.4;display:block;width:100%;text-align:center;}
+.dbt .dd{font-size:17px;font-weight:800;color:var(–text);line-height:1.1;
+display:block;width:100%;text-align:center;}
+.dbt .dm{font-size:9px;color:var(–t3);font-weight:500;line-height:1.4;
+display:block;width:100%;text-align:center;}
+.dbt.active .dn{color:rgba(255,255,255,.85);}
+.dbt.active .dd{color:#fff;}
+.dbt.active .dm{color:rgba(255,255,255,.85);}
 .dc{display:none;animation:fds .22s ease;}.dc.active{display:block;}
 @keyframes fds{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 
 /* ── DAY HERO ── */
-.dhero{border-radius:14px;overflow:hidden;margin-bottom:0;position:relative;height:120px;box-shadow:0 2px 12px var(–sh2);}
-.dhov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.35) 0%,rgba(0,0,0,.05) 100%);}
-.dhc{position:relative;z-index:1;padding:14px 16px;height:100%;display:flex;flex-direction:column;justify-content:center;}
-.dhc h3{font-family:‘Cormorant Garamond’,serif;font-size:19px;font-weight:700;color:#fff;line-height:1.2;text-shadow:0 1px 4px rgba(0,0,0,.3);}
-.dhc p{font-size:11px;color:rgba(255,255,255,.85);margin-top:3px;text-shadow:0 1px 3px rgba(0,0,0,.25);}
+.dhero{border-radius:14px;overflow:hidden;margin-bottom:0;position:relative;
+min-height:110px;height:auto;box-shadow:0 2px 12px var(–sh2);}
+.dhov{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.4) 0%,rgba(0,0,0,.1) 100%);}
+.dhc{position:relative;z-index:1;padding:14px 50px 14px 16px;min-height:110px;
+display:flex;flex-direction:column;justify-content:center;}
+.dhc h3{font-family:‘Cormorant Garamond’,serif;font-size:17px;font-weight:700;
+color:#fff;line-height:1.25;text-shadow:0 1px 4px rgba(0,0,0,.4);
+word-break:keep-all;overflow-wrap:break-word;}
+.dhc p{font-size:11px;color:rgba(255,255,255,.88);margin-top:4px;
+text-shadow:0 1px 3px rgba(0,0,0,.3);}
 .dbdg{position:absolute;top:10px;right:11px;background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:10px;font-weight:600;padding:3px 9px;border-radius:10px;}
 
 /* ── TIMELINE CARD ── */
-.tlcard{background:#fff;border:1px solid var(–bdr);border-radius:0 0 14px 14px;padding:16px 16px 6px;margin-bottom:14px;box-shadow:0 3px 12px var(–sh);}
+.tlcard{background:#ffffff !important;border:1px solid var(–bdr);border-radius:0 0 14px 14px;padding:16px 16px 6px;margin-bottom:14px;box-shadow:0 3px 12px var(–sh);}
+.tlcard,.tlcard *{color:inherit;}
+.tlt{font-size:10px;color:var(–wine) !important;font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
+.tlti{font-size:13px;font-weight:600;color:#1a1208 !important;margin-top:1px;}
+.tlde{font-size:11.5px;color:#7a6548 !important;margin-top:3px;line-height:1.55;}
 
 /* ── TIMELINE ── */
 .tl{padding-left:22px;position:relative;}
 .tl::before{content:’’;position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(–wl),var(–gl2));border-radius:2px;opacity:.25;}
 .tli{position:relative;margin-bottom:16px;}
 .tld{position:absolute;left:-22px;top:4px;width:12px;height:12px;border-radius:50%;background:var(–gold);border:2px solid #fff;box-shadow:0 0 0 2px var(–gp);}
-.tlt{font-size:10px;color:var(–wine);font-weight:700;letter-spacing:.5px;text-transform:uppercase;}
-.tlti{font-size:13px;font-weight:600;color:var(–text);margin-top:1px;}
-.tlde{font-size:11.5px;color:var(–t3);margin-top:3px;line-height:1.55;}
 .bdrive{display:inline-flex;align-items:center;gap:5px;background:var(–gp2);border:1px solid #b8e0ca;color:var(–green);padding:5px 11px;border-radius:20px;font-size:11px;font-weight:500;margin:2px 0;}
 .brest{display:inline-flex;align-items:center;gap:5px;background:var(–gp);border:1px solid var(–sand);color:var(–gd);padding:5px 11px;border-radius:20px;font-size:11px;font-weight:500;margin:2px 0;}
 .bgolf{display:inline-flex;align-items:center;gap:5px;background:var(–bp);border:1px solid #b8d8f0;color:var(–blue);padding:5px 11px;border-radius:20px;font-size:11px;font-weight:500;margin:2px 0;}
@@ -150,11 +163,13 @@ body{background:var(--cream);color:var(--text);font-family:'Noto Sans HK',sans-s
 .bil{font-size:13px;font-weight:500;color:var(–text);}
 .bin{font-size:11px;color:var(–t3);margin-top:2px;}
 .bia{font-size:14px;font-weight:700;color:var(–gd);flex-shrink:0;margin-left:12px;}
-.bia-input{width:80px;text-align:right;font-size:14px;font-weight:700;color:var(–gd);
-border:none;border-bottom:2px dashed var(–sand);background:transparent;
+.bia-input{min-width:60px;max-width:90px;text-align:right;font-size:14px;font-weight:700;
+color:var(–gd);border:none;border-bottom:2px dashed var(–sand);background:transparent;
 outline:none;font-family:‘Noto Sans HK’,sans-serif;flex-shrink:0;margin-left:12px;
-padding:2px 4px;border-radius:4px;transition:all .15s;cursor:text;}
-.bia-input:focus{border-bottom-color:var(–gold);background:var(–gp);border-radius:4px 4px 0 0;color:var(–gd);}
+padding:3px 6px;border-radius:4px;transition:all .15s;cursor:text;display:inline-block;}
+.bia-input:focus,.bia-input:focus-visible{border-bottom:2px solid var(–gold);
+background:var(–gp);border-radius:4px 4px 0 0;outline:none;}
+.bia-input:hover{border-bottom-color:var(–gold-light,#d4a853);}
 .bibar{height:3px;border-radius:2px;background:var(–bdr);margin-top:5px;}
 .bifill{height:100%;border-radius:2px;background:linear-gradient(to right,var(–gl),var(–wl));}
 
@@ -304,8 +319,11 @@ padding:2px 4px;border-radius:4px;transition:all .15s;cursor:text;}
   </div>
 
   <div class="scard">
+    <div class="simgw">
+      <img src="https://images.unsplash.com/photo-1555990793-da11153b4b97?w=800&q=80" alt="Lake Bled" onerror="this.style.display='none'">
       <div class="simgov"></div>
-      <div class="siml">Lake Bled 布萊德湖</div><div class="sims">📍 朱利安阿爾卑斯山</div>
+      <div class="siml">Lake Bled 布萊德湖</div>
+      <div class="sims">📍 朱利安阿爾卑斯山</div>
     </div>
     <div class="sbody">
       <div class="sdesc">斯洛文尼亞最標誌性景色。翡翠綠湖中央有座小島，島上白色教堂配後方古堡。必到！</div>
@@ -361,47 +379,47 @@ padding:2px 4px;border-radius:4px;transition:all .15s;cursor:text;}
   </div>
   <div class="card"><div class="chd"><span class="cic">✈️</span><div><div class="cti">機票</div><div class="csu">倫敦 ↔ 盧布爾雅那，4人</div></div></div>
     <div class="cbd">
-      <div class="bi"><div><div class="bil">來回機票 × 4</div><div class="bin">easyJet / Wizz Air / Ryanair</div></div><input class="bia-input" value="£480" oninput="recalcTotal()" /></div>
+      <div class="bi"><div><div class="bil">來回機票 × 4</div><div class="bin">easyJet / Wizz Air / Ryanair</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£480</span></div>
       <div class="bibar"><div class="bifill" style="width:22%"></div></div>
-      <div class="bi"><div><div class="bil">機場交通（兩端）</div><div class="bin">火車或共乘的士</div></div><input class="bia-input" value="£80" oninput="recalcTotal()" /></div>
+      <div class="bi"><div><div class="bil">機場交通（兩端）</div><div class="bin">火車或共乘的士</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£80</span></div>
     </div>
   </div>
   <div class="card"><div class="chd"><span class="cic">🚗</span><div><div class="cti">租車</div><div class="csu">7天自動波（Venice 或 Ljubljana 取車）</div></div></div>
     <div class="cbd">
-      <div class="bi"><div><div class="bil">自動波 Compact（7天）</div><div class="bin">Venice VCE 或 Ljubljana — 旺季實際報價</div></div><input class="bia-input" value="£420" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">基本保險（CDW）</div><div class="bin">強烈建議買，通常另計</div></div><input class="bia-input" value="£80" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">跨境附加費（意大利→斯洛文尼亞）</div><div class="bin">部分公司收費，需提前申報</div></div><input class="bia-input" value="£30" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">油費（~800km）</div><div class="bin">€1.60/L 柴油</div></div><input class="bia-input" value="£90" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">泊車 / Slovenia Vignette</div><div class="bin">過路貼 €15，Ljubljana 泊車</div></div><input class="bia-input" value="£25" oninput="recalcTotal()" /></div>
+      <div class="bi"><div><div class="bil">自動波 Compact（7天）</div><div class="bin">Venice VCE 或 Ljubljana — 旺季實際報價</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£420</span></div>
+      <div class="bi"><div><div class="bil">基本保險（CDW）</div><div class="bin">強烈建議買，通常另計</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£80</span></div>
+      <div class="bi"><div><div class="bil">跨境附加費（意大利→斯洛文尼亞）</div><div class="bin">部分公司收費，需提前申報</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£30</span></div>
+      <div class="bi"><div><div class="bil">油費（~800km）</div><div class="bin">€1.60/L 柴油</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£90</span></div>
+      <div class="bi"><div><div class="bil">泊車 / Slovenia Vignette</div><div class="bin">過路貼 €15，Ljubljana 泊車</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£25</span></div>
     </div>
   </div>
   <div class="card"><div class="chd"><span class="cic">🏨</span><div><div class="cti">住宿</div><div class="csu">7晚，2間房</div></div></div>
     <div class="cbd">
-      <div class="bi"><div><div class="bil">盧布爾雅那 — 1晚</div><div class="bin">Airbnb / 精品青旅</div></div><input class="bia-input" value="£60" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">Lake Bled — 2晚</div><div class="bin">湖畔 B&B / Golf Hotel</div></div><input class="bia-input" value="£180" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">Goriška Brda — 2晚</div><div class="bin">Valentina / Dvor 酒莊民宿</div></div><input class="bia-input" value="£150" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">Piran — 2晚</div><div class="bin">海景民宿，2間房</div></div><input class="bia-input" value="£160" oninput="recalcTotal()" /></div>
+      <div class="bi"><div><div class="bil">盧布爾雅那 — 1晚</div><div class="bin">Airbnb / 精品青旅</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£60</span></div>
+      <div class="bi"><div><div class="bil">Lake Bled — 2晚</div><div class="bin">湖畔 B&B / Golf Hotel</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£180</span></div>
+      <div class="bi"><div><div class="bil">Goriška Brda — 2晚</div><div class="bin">Valentina / Dvor 酒莊民宿</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£150</span></div>
+      <div class="bi"><div><div class="bil">Piran — 2晚</div><div class="bin">海景民宿，2間房</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£160</span></div>
     </div>
   </div>
   <div class="card"><div class="chd"><span class="cic">🍷</span><div><div class="cti">美酒美食</div></div></div>
     <div class="cbd">
-      <div class="bi"><div><div class="bil">酒莊試酒（4場）</div><div class="bin">~€12-15/人/場</div></div><input class="bia-input" value="£150" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">買酒帶回家</div><div class="bin">~4支/人，平均£10/支</div></div><input class="bia-input" value="£160" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">午餐 × 6日</div><div class="bin">本地麵包店、輕食</div></div><input class="bia-input" value="£290" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">晚餐 × 6晚</div><div class="bin">農莊晚餐 + Piran 海鮮</div></div><input class="bia-input" value="£480" oninput="recalcTotal()" /></div>
+      <div class="bi"><div><div class="bil">酒莊試酒（4場）</div><div class="bin">~€12-15/人/場</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£150</span></div>
+      <div class="bi"><div><div class="bil">買酒帶回家</div><div class="bin">~4支/人，平均£10/支</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£160</span></div>
+      <div class="bi"><div><div class="bil">午餐 × 6日</div><div class="bin">本地麵包店、輕食</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£290</span></div>
+      <div class="bi"><div><div class="bil">晚餐 × 6晚</div><div class="bin">農莊晚餐 + Piran 海鮮</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£480</span></div>
     </div>
   </div>
   <div class="card"><div class="chd"><span class="cic">⛳</span><div><div class="cti">活動</div></div></div>
     <div class="cbd">
-      <div class="bi"><div><div class="bil">Golf Club Bled（4人）</div><div class="bin">€80-120/人</div></div><input class="bia-input" value="£350" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">Lake Jasna（免費入場）</div><div class="bin">Kranjska Gora，順路停</div></div><input class="bia-input" value="免費 🎉" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">Bled 划艇 + 古堡 + Vintgar</div><div class="bin">€15 + €15 + €6/人</div></div><input class="bia-input" value="£125" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">Lipica 白馬場</div><div class="bin">€13/人</div></div><input class="bia-input" value="£44" oninput="recalcTotal()" /></div>
-      <div class="bi"><div><div class="bil">電動單車 Brda（1日）</div><div class="bin">€25/輛 × 4</div></div><input class="bia-input" value="£85" oninput="recalcTotal()" /></div>
+      <div class="bi"><div><div class="bil">Golf Club Bled（4人）</div><div class="bin">€80-120/人</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£350</span></div>
+      <div class="bi"><div><div class="bil">Lake Jasna（免費入場）</div><div class="bin">Kranjska Gora，順路停</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">免費 🎉</span></div>
+      <div class="bi"><div><div class="bil">Bled 划艇 + 古堡 + Vintgar</div><div class="bin">€15 + €15 + €6/人</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£125</span></div>
+      <div class="bi"><div><div class="bil">Lipica 白馬場</div><div class="bin">€13/人</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£44</span></div>
+      <div class="bi"><div><div class="bil">電動單車 Brda（1日）</div><div class="bin">€25/輛 × 4</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£85</span></div>
     </div>
   </div>
   <div class="card"><div class="chd"><span class="cic">🆘</span><div><div class="cti">緊急備用（10%）</div></div></div>
-    <div class="cbd"><div class="bi"><div><div class="bil">意外開支緩衝</div></div><input class="bia-input" value="£340" oninput="recalcTotal()" /></div></div>
+    <div class="cbd"><div class="bi"><div><div class="bil">意外開支緩衝</div></div><span class="bia-input" contenteditable="true" oninput="recalcTotal()">£340</span></div></div>
   </div>
 </div>
 
@@ -700,7 +718,7 @@ const DAYS = [
     {tp:"rest",de:"晚餐前30分鐘歇腳 ☕"},
     {t:"19:30",ti:"Wine Bar 開胃",de:"試斯洛文尼亞葡萄酒，點一杯 Rebula 或 Furmint。預算約 £20/人。"},
   ]},
-  {sd:"五",dt:"24",mo:"Jul",title:"盧布爾雅那 → Lake Jasna → Lake Bled",sub:"第2天 — 雙湖打卡日",bg:"linear-gradient(120deg,#3a8fbf,#2c6e9b)",em:"🏔",
+  {sd:"五",dt:"24",mo:"Jul",title:"Lake Jasna + Lake Bled",sub:"第2天 — 雙湖打卡日 🏔",bg:"linear-gradient(120deg,#3a8fbf,#2c6e9b)",em:"🏔",
    tl:[
     {t:"08:30",ti:"早餐 + Check out",de:"中央市場買新鮮麵包、芝士、火腿做野餐材料。"},
     {tp:"drive",de:"盧布爾雅那 → Lake Jasna (Kranjska Gora)：約55分鐘，65km"},
@@ -735,7 +753,7 @@ const DAYS = [
     {t:"17:00",ti:"Klet Brda 初探",de:'<span class="chip g" onclick="openPlace(\'klet-brda\')" style="vertical-align:middle">🍷 Klet Brda</span>，隨時入場，試整個 Brda 地區概覽。€10/人。'},
     {t:"19:30",ti:"B&B 農莊晚餐",de:"自家製晚餐，新鮮食材 + 自產酒。旅程必吃之一！"},
   ]},
-  {sd:"一",dt:"27",mo:"Jul",title:"Goriška Brda 品酒日",sub:"第5天 — 深度酒莊體驗",bg:"linear-gradient(120deg,#c4485a,#8b2635)",em:"🍷",
+  {sd:"一",dt:"27",mo:"Jul",title:"Goriška Brda 品酒日",sub:"第5天 — 深度酒莊體驗",bg:"linear-gradient(120deg,#9b3a8a,#6a2060)",em:"🍷",
    tl:[
     {t:"09:00",ti:"Ščurek 酒莊早上導覽",de:'<span class="chip" onclick="openPlace(\'scurek\')" style="vertical-align:middle">🍷 Posestvo Ščurek</span>，家族成員親自帶領，試 Rebula、Merlot。€12/人，需提前預約。'},
     {tp:"rest",de:"試酒前食點野！空肚試酒唔係好主意 😅"},
@@ -757,7 +775,7 @@ const DAYS = [
     {t:"17:30",ti:"Check in Piran",de:'<span class="chip b" onclick="openPlace(\'piran-hotel\')" style="vertical-align:middle">🌊 Piran 海景民宿</span>。泊車在城牆外！'},
     {t:"19:30",ti:"Piran 海港海鮮晚餐！",de:'<span class="chip b" onclick="openPlace(\'piran\')" style="vertical-align:middle">🌊 Piran 古城</span> 海港邊，新鮮魚 + Malvasia 白酒。旅程最美一餐！'},
   ]},
-  {sd:"三",dt:"29",mo:"Jul",title:"Piran 悠閒 → 飛回家",sub:"第7天 — 最後陽光，帶酒回家",bg:"linear-gradient(120deg,#3a8fbf,#2c6e9b)",em:"🌅",
+  {sd:"三",dt:"29",mo:"Jul",title:"Piran 悠閒 → 飛回家",sub:"第7天 — 最後陽光，帶酒回家",bg:"linear-gradient(120deg,#e07b3a,#b85a1a)",em:"🌅",
    tl:[
     {t:"08:30",ti:"最後早餐",de:'<span class="chip b" onclick="openPlace(\'piran\')" style="vertical-align:middle">🌊 Piran</span> 海邊咖啡廳，espresso + 新鮮包，望住亞德里亞海。'},
     {t:"10:00",ti:"最後古城漫步",de:"Tartini 廣場、聖喬治教堂鐘樓俯瞰全城，最後打卡。"},
@@ -874,18 +892,24 @@ renderIt(); renderCL(); renderPack();
 // ── Budget recalculator ──
 function recalcTotal() {
   let total = 0;
-  document.querySelectorAll('.bia-input').forEach(inp => {
-    const raw = inp.value.replace(/[£,~\s免費🎉]/g, '').trim();
+  document.querySelectorAll('.bia-input').forEach(el => {
+    const raw = (el.textContent || '').replace(/[£,~\s]/g,'').replace(/免費.*/,'').trim();
     const num = parseFloat(raw);
-    if (!isNaN(num)) total += num;
+    if (!isNaN(num) && num > 0) total += num;
   });
   const gt = document.getElementById('grandTotal');
   const pp = document.getElementById('perPerson');
   if (gt) gt.textContent = '£' + Math.round(total).toLocaleString();
   if (pp) pp.textContent = '£' + Math.round(total / 4).toLocaleString();
 }
-// Run on load so total shows correct
-setTimeout(recalcTotal, 100);
+// Prevent newlines in contenteditable
+document.addEventListener('keydown', function(e) {
+  if (e.target.classList.contains('bia-input') && e.key === 'Enter') {
+    e.preventDefault();
+    e.target.blur();
+  }
+});
+setTimeout(recalcTotal, 150);
 </script>
 
 </body>
